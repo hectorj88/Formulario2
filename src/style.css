@@ -345,8 +345,8 @@ h1, #nitE{
 }
 
 #nombCo, #apellCo{
-    min-width: 52mm;
-    max-width: 52mm;
+    min-width: 50mm;
+    max-width: 50mm;
 }
 
 #empCo{
@@ -361,8 +361,8 @@ h1, #nitE{
 }
 
 #direCo{
-    min-width: 40mm;
-    max-width: 40mm;
+    min-width: 38mm;
+    max-width: 38mm;
 }
 
 .carAntSuel, .carAntSuel2{
@@ -686,7 +686,7 @@ h1, #nitE{
 
 li{
     margin-left: 2mm;
-    font-size: 2.6mm;
+    font-size: 2.3mm;
     list-style-type: decimal;
 }
 
@@ -698,7 +698,7 @@ li{
 .celHuella{
     display: block;
     position: relative;
-    margin: 1mm 1mm 0 1mm;
+    margin: 1mm 0 0 1mm;
     min-width: 107mm;
     max-width: 107mm;
     min-height: 20mm;
@@ -708,8 +708,8 @@ li{
 .datoCedula{
     position: relative;
     display: inline-block;
-    min-width: 80mm;
-    max-width: 80mm;
+    min-width: 83mm;
+    max-width: 83mm;
     padding-top: 12mm;
 }
 
@@ -735,7 +735,7 @@ li{
     min-height: 18mm;
     max-height: 18mm;
     border: 1px black solid;
-    margin: 0 0 0 5mm;
+    margin: 0;
     background-color: white;
 }
 
@@ -779,7 +779,7 @@ li{
 }
 
 #textoPagare1, #textoPagare2{
-    font-size: 2.5mm;
+    font-size: 2.3mm;
 }
 
 .firmaCedHuellas{
@@ -800,7 +800,7 @@ li{
     min-height: 18mm;
     max-height: 18mm;
     border: 1px black solid;
-    margin: 0 0 0 5mm;
+    margin: 0 0 0 2mm;
     background-color: white;
 }
 
@@ -809,6 +809,8 @@ li{
     display: inline-flex;
     border-top: 1px black solid;
     letter-spacing: 1mm;
+    min-width: 40mm;
+    max-width: 40mm;
 }
 
 #guardar{
