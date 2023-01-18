@@ -228,8 +228,8 @@ h1, #nitE{
     border-right: 1px black solid;
 }
 #cargo{
-    min-width: 43mm;
-    max-width: 43mm;
+    min-width: 40mm;
+    max-width: 40mm;
 }
 
 .div26-2{
@@ -247,8 +247,13 @@ h1, #nitE{
 }
 
 #sueldo{
-    min-width: 27mm;
-    max-width: 27mm;
+    min-width: 25mm;
+    max-width: 25mm;
+}
+
+#labelcasa, #labelempresa{
+    size: 1mm;
+    width: 1mm;
 }
 
 #propia, #alquilada, #cCasa, #cEmpresa{
@@ -271,8 +276,8 @@ h1, #nitE{
 }
 
 #email{
-    min-width: 85mm;
-    max-width: 85mm;
+    min-width: 80mm;
+    max-width: 80mm;
 }
 
 #fCobro{
