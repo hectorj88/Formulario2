@@ -163,8 +163,8 @@ h1, #nitE{
 }
 
 #nombre, #apellido{
-    min-width: 82mm;
-    max-width: 82mm;
+    min-width: 80mm;
+    max-width: 80mm;
 }
 
 .divMitadD{
@@ -177,8 +177,8 @@ h1, #nitE{
 }
 
 #direccion{
-    min-width: 74mm;
-    max-width: 74mm;
+    min-width: 70mm;
+    max-width: 70mm;
 }
 
 .div26{
@@ -209,19 +209,19 @@ h1, #nitE{
 }
 
 #barrio{
-    min-width: 43mm;
-    max-width: 43mm;
+    min-width: 40mm;
+    max-width: 40mm;
     font-size: 65%;
 }
 
 #empresa{
-    min-width: 81mm;
-    max-width: 81mm;
+    min-width: 79mm;
+    max-width: 79mm;
 }
 
 #dirEmpr{
-    min-width: 40mm;
-    max-width: 40mm;
+    min-width: 38mm;
+    max-width: 38mm;
 }
 
 .div56-2{
@@ -304,8 +304,8 @@ h1, #nitE{
 }
 
 #nino{
-    min-width: 109mm;
-    max-width: 109mm;
+    min-width: 105mm;
+    max-width: 105mm;
 }
 
 .ciudad{
@@ -350,8 +350,8 @@ h1, #nitE{
 }
 
 #empCo{
-    min-width: 81mm;
-    max-width: 81mm;
+    min-width: 78mm;
+    max-width: 78mm;
 }
 
 #telCo{
@@ -380,8 +380,8 @@ h1, #nitE{
 }
 
 #cargoCo{
-    min-width: 43mm;
-    max-width: 43mm;
+    min-width: 40mm;
+    max-width: 40mm;
 }
 
 #antiCo{
@@ -814,7 +814,7 @@ li{
 #guardar{
     position: relative;
     display: inline-flex;
-    margin: 0 2mm 0 2mm;
+    margin: 0;
 }
 
 .derP{
