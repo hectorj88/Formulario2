@@ -247,13 +247,14 @@ h1, #nitE{
 }
 
 #sueldo{
-    min-width: 25mm;
-    max-width: 25mm;
+    min-width: 23mm;
+    max-width: 23mm;
 }
 
 #labelcasa, #labelempresa{
-    size: 1mm;
-    width: 1mm;
+    display: inline-block;
+    position: relative;
+    font-size: 1mm;
 }
 
 #propia, #alquilada, #cCasa, #cEmpresa{
