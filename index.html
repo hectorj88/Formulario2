@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/reset.css">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" type="text/css" href="src/style.css" media="screen" />
+    <title>Formulario</title>
+</head>
+<body>
+
+    <form action="" autocomplete="off">
+
+        <div class="cabecera">
+
+            <img src="img/Logo.png" alt="Logo">
+
+            <div class="datoEmp">
+                <h1>Editorial BEBE Genial S.A.S</h1>
+                <p id="nitE">NIT: 900.814.605-4</p>
+                <p class="dE">Cra. 49B No. 93 - 68 - La Castellana - Tel.: 601-5783678</p>
+                <p class="dE">Cel. 318 832 21 54 - Bogotá D.C. - Colombia</p>
+                <p class="dE">www.bebegenial.com</p>
+            </div>
+
+            <div class="infoPedido">
+                <div class="contenedor">
+                    <label for="nPedido">PEDIDO </label>
+                    <input id="pedido" type="text">
+                    <label for="fPedido">FECHA </label>
+                    <input id="fecha" type="text">
+                    <label for="cPedido">CUENTA </label>
+                    <input id="cuenta" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="datosClientes">
+
+            <div class="nomApe">
+                <div class="divMitadI">
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" type="text">
+                </div>
+                <div class="divMitadD">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="" id="apellido">
+                </div>
+            </div>
+
+            <div class="dirTelBarr">
+                <div class="divMitadI">
+                    <label for="direccion">Direccion Res.:</label>
+                    <input type="text" id="direccion">
+                </div>
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" id="celular">
+                    </div>
+                    <div class="div56">
+                        <label for="Barrio">Barrio:</label>
+                        <input type="text" id="barrio">
+                    </div>
+                </div>
+            </div>
+
+            <div class="emprTelDir">
+                <div class="divMitadI">
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa">
+                </div>
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="telefonoEmp">Telefono:</label>
+                        <input type="tel" id="telefonoEmp">                        
+                    </div>
+                    <div class="div56">
+                        <label for="dirEmpr">Direccion</label>
+                        <input type="text" id="dirEmpr">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carAntSuel">
+                <div class="divMitadI">
+                    <div class="div56-2">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo">
+                    </div>
+                    <div class="div26-2">
+                        <label for="antiguedad">Antiguedad:</label>
+                        <input type="number" id="antiguedad">
+                    </div>
+                </div>
+
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="sueldo">Sueldo:</label>
+                        <input type="number" id="sueldo">
+                    </div>
+                    <div class="div56">
+                        <label for="vivienda">Vivienda:</label>
+                        <label for="propia">Propia</label>
+                        <input type="checkbox" id="propia">
+                        <label for="Alquilada">Alquilada</label>
+                        <input type="checkbox" id="alquilada">
+                    </div>
+                </div>
+            </div>
+
+            <div class="emailEntFecha">
+                <div class="divMitadI">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="entrega">Entrega:</label>
+                        <label for="cCasa">Casa</label>
+                        <input type="checkbox" id="cCasa">
+                        <label for="cEmpresa">Empresa</label>
+                        <input type="checkbox" id="cEmpresa">
+                    </div>
+                    <div class="div56">
+                        <label for="fCobro">Fecha de Cobro:</label>
+                        <input type="text" id="fCobro">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="ninoCiudad">
+            <div class="nomNino">
+                <label for="nino">Enviar a Nombre de:</label>
+                <input type="text" id="nino">
+            </div>
+            <div class="ciudad">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad">
+            </div>
+        </div>
+
+        <div class="conyCodeudor">
+            <div class="nomApe">
+                <div class="divMitadI">
+                    <label for="nombreCony">Nombre (Conyugue o Codeudor):</label>
+                    <input type="text" id="nombCo">
+                </div>
+                <div class="divMitadD">
+                    <label for="apellidoCony">Apellido (Conyugue o Codeudor):</label>
+                    <input type="text" id="apellCo">
+                </div>
+            </div>
+
+            <div class="dirTelBarr">
+                <div class="divMitadI">
+                    <label for="empCo">Empresa:</label>
+                    <input type="text" id="empCo">
+                </div>
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="telCo">Telefono:</label>
+                        <input type="tel" id="telCo">
+                    </div>
+                    <div class="div56">
+                        <label for="direCo">Direccion:</label>
+                        <input type="text" id="direCo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carAntSuel2">
+                <div class="divMitadI">
+                    <div class="div56-2">
+                        <label for="cargoCo">Cargo:</label>
+                        <input type="text" id="cargoCo">
+                    </div>
+                    <div class="div26-2">
+                        <label for="antiCo">Antiguedad:</label>
+                        <input type="number" id="antiCo">
+                    </div>
+                </div>
+                <div class="divMitadD">
+                    <div class="div26">
+                        <label for="suelCo">Sueldo:</label>
+                        <input type="number" id="suelCo">
+                    </div>
+                    <div class="div56">
+                        <label for="automovil">Automovil:</label>
+                        <label for="si">Si</label>
+                        <input type="checkbox" id="autosi">
+                        <label for="no">No</label>
+                        <input type="checkbox" id="autono">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="reObReCo">
+
+            <div class="iz81">
+                <div class="referido">
+                    <div class="datoReferido">
+                        <label for="nombreR1">Nombre:</label>
+                        <input type="text" id="nombR1">
+                        <label for="ptco1">Parentesco:</label>
+                        <input type="text" id="ptco1">
+                    </div>
+                    <div class="datoReferido">
+                        <label for="telOR1">Tel. Of.::</label>
+                        <input type="tel" id="telOR1">
+                        <label for="telRR1">Tel. Res.::</label>
+                        <input type="tel" id="telRR1">
+                    </div>
+
+                    <div class="datoReferido">
+                        <label for="nombreR2">Nombre:</label>
+                        <input type="text" id="nombR2">
+                        <label for="ptco2">Parentesco:</label>
+                        <input type="text" id="ptco2">
+                    </div>
+                    <div class="datoReferido">
+                        <label for="telOR2">Tel. Of.::</label>
+                        <input type="tel" id="telOR2">
+                        <label for="telRR2">Tel. Res.::</label>
+                        <input type="tel" id="telRR2">
+                    </div>
+
+                    <div class="datoReferido">
+                        <label for="nombreR3">Nombre:</label>
+                        <input type="text" id="nombR3">
+                        <label for="ptco3">Parentesco:</label>
+                        <input type="text" id="ptco3">
+                    </div>
+                    <div class="datoReferido">
+                        <label for="telOR3">Tel. Of.::</label>
+                        <input type="tel" id="telOR3">
+                        <label for="telRR3">Tel. Res.::</label>
+                        <input type="tel" id="telRR3">
+                    </div>
+
+                    <div class="datoReferido">
+                        <label for="nombreR4">Nombre:</label>
+                        <input type="text" id="nombR4">
+                        <label for="ptco4">Parentesco:</label>
+                        <input type="text" id="ptco4">
+                    </div>
+                    <div class="datoReferidoF">
+                        <label for="telOR4">Tel. Of.::</label>
+                        <input type="tel" id="telOR4">
+                        <label for="telRR4">Tel. Res.::</label>
+                        <input type="tel" id="telRR4">
+                    </div>
+                </div>
+
+                <div class="obras">
+                    <div class="coleccionOb">
+                        <label for="coleccion">Coleccion</label>
+                    </div>
+                    <div class="valorOb">
+                        <label for="valor" id="valorC">Valor</label>
+                    </div>
+
+                    <textarea name="" id="detColec" cols="30" rows="7"></textarea>
+                    <textarea name="" id="detValor" cols="30" rows="7"></textarea>
+
+                    <div class="importetol">
+                        <div class="importe">
+                            <label for="importeTotal">Importe Total:</label>
+                        </div>
+                        <div class="totalVal">
+                            <input type="text" id="totalVal">
+                        </div>
+                    </div>
+
+                    <div class="coutasOb">
+                        <label for="nCuotas">No. Cuotas:</label>
+                        <input type="text" id="nCoutas">
+                        <label for="vCutoa">VR. Coutas:</label>
+                        <input type="text" id="vrCuota">
+                    </div>
+
+                </div>
+
+                <div class="observaciones">
+                    <textarea name="" id="observ" cols="39" rows="6">Observaciones:</textarea>
+                </div>
+
+                <div class="relacionista">
+                    <label for="relacionistaC">Toma de Contacto:</label>
+                    <input type="text" id="tomaCont">
+                </div>
+
+                <div class="especialista">
+                    <label for="especialista">Especialista:</label>
+                    <input type="text" id="especialista">
+                </div>
+
+                <div class="director">
+                    <label for="director">Director:</label>
+                    <input type="text" id="director">
+                </div>
+            </div>
+
+            <div class="de105">
+                <div class="legal">
+                    <p id="tituloL">DATOS IMPORTANTES PARA EL CLIENTE</p>
+                    <ol type="1">
+                        <li>Conserve esta copia como recibo de la suma de dinero que usted ha entregado.</li>
+                        <li>Autorizo a EDITORIAL BEBE GENIAL S.A.S Nit. 900.814.605-4 para que obtenga de cualquier fuente las informaciones y referencias relativas a mi persona, a mi comportamiento y crédito comercial, hábitos de pago, manejos de mi(s) cuenta(s) corriente y en general cumplimiento de mis obligaciones. De igual manera autorizo a la empresa de forma libre y espontánea para que en caso de mora en el pago de las obligaciones adquiridas, reporte mi nombre y documento de identidad en datacrédito o cualquier banco de datos que preste el servicio de información comercial.</li>
+                        <li>Si aprobado el crédito no recibo este pedido, autorizo para que el valor de la cuota inicial sea aplicado a los costos administrativos que haya ocasionado. Una vez recibida la mercancia y pasados 5 días, la empresa bajo ninguna circunstancia aceptará su devolución.</li>
+                        <li>De conformidad con el articulo 622 de el Código de Comercio autorizo a EDITORIAL BEBE GENIAL SAS a llenar los espacios en blanco del pagaré a la orden No., que he entregado debidamente firmado por el suscrito así: A. El día que se inserte como aquel en que debo pagar la primera cuota a que se refiere dicho pagaré deberá ser un mes después de la fecha en que reciba el producto que hace referencia a este pedido. B. La fecha del pagaré deberá ser la misma de la fecha en que reciba el producto que hace referencia este pedido.
+                            C. La cuantia del pagaré es el valor que adeudo a EDITORIAL BEBE GENIAL S.A.S. Por concepto del saldo de capital más intereses de financiación de crédito concedido a mi nombre. Valor que se detalla en esta solicitud de pedido.</li>
+                            <li>AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES
+                                Con la firma de este documento manifiesto que he sido informado por EDITORIAL BEBE GENIAL S.A.S, (en adelante la "Compañia") de que: A. La Compañía actuara como responsable del tratamiento de datos personales de los cuales soy titular y que podrá recolectar, usar y tratar mis datos personales conforme la politica tratamiento de datos personales de la compañia EDITORIAL BEBE GENIAL S.A.S. B. Es de carácter facultativo responder preguntas que versen sobre Datos Sensibles o sobre menores de edad. C. Mis derechos como titular de los datos son los previstos en la constitución y la ley, especialmente el derecho a conocer, actualizar, rectificar y suprimir mi información personal, asi como el derecho a revocar el consentimiento otorgado para el tratamiento de datos personales. D. Los derechos pueden ser ejercidos a través de los canales gratuitos dispuestos por la compañía y observando la politica de tratamiento de Datos personales de la compañía. E. Para cualquier inquietud o información adicional relacionada con el tratamiento de datos personales puedo contactarme con EDITORIAL BEBE GENIALS.AS. F. La compañía garantiza la confidencialidad, libertad, seguridad, veracidad, transparencia, acceso y circulación restringida de mis datos y se reservan el derecho a modificar su politica de tratamiento de datos personales en cualquier momento. Cualquier cambio sera informado oportunamente por EDITORIAL BEBE GENIAL S.A.S. Teniendo en cuenta lo anterior, autorizo de manera voluntaria, previa, y explicita, informada e inequívoca a la compañía para tratar mis datos personales de acuerdo con la politica de tratamiento de datos personales de la compañía y para los fines relacionados con su objeto social y en especial para fines legales, contractuales, comerciales descritos en la politica de Tratamiento de Datos Personales del editor. La información obtenida para el Tratamiento de mis datos personales la he suministrado de forma voluntaria y es veridica.<br></li>
+                    </ol>
+                    <p id="cartera"><br>Para los pagos mensuales favor contactar al departamento de cartera al +57 305 333 7253</p>
+                </div>
+
+                <div class="celHuella">
+                    <div class="datoCedula">
+                        <input type="number" id="cedula1" required>
+                        <label for="cc">C.C.</label>
+                        <input type="checkbox" id="cc1">
+                        <label for="ce">C.E.</label>
+                        <input type="checkbox" id="ce1">
+                        <label for="nit">NIT.</label>
+                        <input type="checkbox" id="nit1">
+                    </div>
+                    <div class="huella">
+                        <p id="indiceD">Indice Derecho</p>
+                    </div>
+                </div>
+
+                <div class="celHuella">
+                    <div class="datoCedula">
+                        <input type="number" id="cedula2" required>
+                        <label for="cc">C.C.</label>
+                        <input type="checkbox" id="cc2">
+                        <label for="ce">C.E.</label>
+                        <input type="checkbox" id="ce2">
+                        <label for="nit">NIT.</label>
+                        <input type="checkbox" id="nit2">
+                    </div>
+                    <div class="huella">
+                        <p id="indiceD">Indice Derecho</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagare">
+
+            <div class="izqP">
+                <div class="terminosPagare">
+                    <p id="textoPagare1">Yo, (nosotros)_____________________________________________________________________ identificado (s) como aparece al pie de mi (nuestras) firma(s), manifiesto (manifestamos) que me (nos) obligo(obligamos) solidariamente a pagar a EDITORIAL BEBE GENIAL S.AS Nit.900.814.605-4, o a su orden en esta ciudad o en sus oficinas de __________________________ _______________________ la suma de $ __________________ en:_______________cuotas mensuales sucesivas e iguales de $ ______________________ cada una pagaderas el dia ____ de cada mes, siendo pagadera la primera de ellas el dia ____________ de__________________, y asi sucesivamente hasta completar el número de cuotas mencionadas. En el valor de cada cuota mensual está incluido los intereses del plazo a la tasa del ___________ mensual liquida sobre los saldos de capital. En caso de mora reconoceré, (reconoceremos) intereses a la tasa máxima prevista en la ley para este evento en el momento de presentarse la mora.</p>
+                    <p id="textoPagare2">Manifiesto (manifestamos) que para los efectos del artículo 1583 y demás concordantes del código civil, nuestras obligaciones se consideran como indivisibles. Expresamente, autorizo (autorizamos) al acreedor para dar por vencido el plazo pendiente de la obligación y exigir de inmediato judicial o extrajudicialmente, el pago del total del saldo insoluto de las obligaciones aquí incorporadas en el evento en que dejare (dejaremos) de pagar en el tiempo debido una o más cuotas de amortización gradual de las arriba mencionadas. Autorizo (autorizamos) al acreedor para que en caso de incumplimiento de cualquiera de las obligaciones contraídas por el presente documento, dé aviso de este hecho a la Asociación Bancaria de Colombia, datacrédito y/o cualquier entidad que preste servicio de información comercial y consultar dicha Asociación y/o entidad de mi (nuestro) endeudamiento actual. Tasa efectiva anual____________ para constancia se firma en ______________ a los ____________ (   ) días del mes de ______________ de __________ (     )</p>
+                </div>
+    
+                <div class="firmaCedHuellas">
+                    <label for="cedula3">Cedula</label>
+                    <input type="text" id="cedula3">
+                    <div class="huella2">
+                        <p id="indiceD">Indice Derecho</p>
+                    </div>
+                    <button id="guardar">Guardar</button>
+                    <label for="cedula4">Cedula</label>
+                    <input type="text" id="cedula4">
+                    <div class="huella2">
+                        <p id="indiceD">Indice Derecho</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="derP">
+                <p id="textoPagare3">PAGARE</p>
+            </div>
+        </div>
+
+
+
+
+    </form>
+    
+</body>
+</html>
