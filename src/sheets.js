@@ -19,7 +19,7 @@ async function getPedidos(){
 
     pedidos = [];
     console.log(range.values) /*borrar despues de pruebas*/
-    range.values.foreach((fila) => {
+    range.values.forEach((fila) => {
         if (isNaN(parseInt(fila[0]))) return;
         const nuevoPedido ={
             pedido: fila[0],
@@ -164,6 +164,7 @@ async function editPedidos(pedd){
 async function buscarPedido(){
     const Encontrado = pedidos.findIndex( pedido => parseInt(pedido.pedido) === parseInt($pedido.value) );
     console.log(Encontrado.value);
+    console.log(Encontrado);
 
     if (Encontrado >= 0) {
         const pedidoEncontrado = pedidos[Encontrado];

@@ -93,8 +93,7 @@ function ejecFunc(){
     }else{
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();
-    
-    handleAuthChange();}*/
+    }*/
 }
 $botonGuardar.onclick = ejecFunc;
 
@@ -323,4 +322,5 @@ window.addEventListener('click', function(event) {
 
 window.onload = function() {
     alert("¡Bienvenido a mi página web!");
+    handleAuthClick();
 };
