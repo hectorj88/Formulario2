@@ -273,7 +273,7 @@ $imgpago.addEventListener('change', ()=>{
 
 
 function handleAuthChange(isSignedIn) {
-    if (isSignedIn) {
+    if (tokenClient ==! undefined) {
         // si no esta autenticado
         if(validarCampos()===true){
             resaltarCampos();
