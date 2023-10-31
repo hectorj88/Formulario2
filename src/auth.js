@@ -85,11 +85,9 @@ function handleAuthClick() {
     tokenClient.callback = async (resp) => {
         if (resp.error !== undefined) {
             throw (resp);
-        }
-        /*
-        document.getElementById('signout_button').style.visibility = 'visible';
-        document.getElementById('authorize_button').innerText = 'Refresh';
-        */
+        }        
+        //document.getElementById('signout_button').style.visibility = 'visible';
+        //document.getElementById('authorize_button').innerText = 'Refresh';        
         await getPedidos();
     };
 

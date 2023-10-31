@@ -161,10 +161,10 @@ async function editPedidos(pedd){
     });
 }
 
-async function buscarPedido(){
-    const Encontrado = pedidos.findIndex( pedido => parseInt(pedido.pedido) === parseInt($pedido.value) );
-    console.log(Encontrado.value);
-    console.log(Encontrado);
+async function buscarPedido() {
+    const Encontrado = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value));
+    console.log(pedidos.pedido);
+    console.log($pedido.value);
 
     if (Encontrado >= 0) {
         const pedidoEncontrado = pedidos[Encontrado];
@@ -229,6 +229,6 @@ async function buscarPedido(){
 
     } else {
         console.log("La posición proporcionada está fuera de rango.");
-            alert("Numero de pedido no encontrado");
+        alert("Numero de pedido no encontrado");
     }
-    }
+}
