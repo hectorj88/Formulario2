@@ -55,17 +55,18 @@ function gisLoaded() {
         callback: '', // defined later
     });
     gisInited = true;
-    maybeEnableButtons();
+    //maybeEnableButtons();
 }
 
 /**
  * Permite la interacción del usuario una vez cargadas todas las bibliotecas.
- */
+
+
 function maybeEnableButtons() {
     if (gapiInited && gisInited) {
         document.getElementById('authorize_button').style.visibility = 'visible';
     }
-}
+} */
 
 /**
  *  Registrar al usuario al pulsar el botón.
