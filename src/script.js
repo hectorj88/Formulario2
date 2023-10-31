@@ -93,8 +93,8 @@ function ejecFunc(){
     }else{
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();
-    }*/
-    handleAuthChange();
+    
+    handleAuthChange();}*/
 }
 $botonGuardar.onclick = ejecFunc;
 
@@ -276,43 +276,6 @@ $imgpago.addEventListener('change', ()=>{
     let pagoURL2 = URL.createObjectURL(pago);
     document.querySelector("#pago1").setAttribute('src',pagoURL2);
 })
-
-
-function handleAuthChange() {
-    /*
-    if (isUserAuthenticated) {
-        // si esta autenticado
-        if(validarCampos()===true){
-            resaltarCampos();
-            guardarPdf();
-            enviarFormulario();
-        }else{
-            alert("Debes llenar todos los campos requeridos")
-            resaltarCampos();
-        }
-    } else {
-        // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
-        handleAuthClick();
-    }*/
-
-    if (nuevoPedido.length === 0 || nuevoPedido === null || nuevoPedido === undefined) {
-
-        // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
-        handleAuthClick();
-
-    } else {
-        // si esta autenticado
-        if (validarCampos() === true) {
-            resaltarCampos();
-            guardarPdf();
-            enviarFormulario();
-        } else {
-            alert("Debes llenar todos los campos requeridos")
-            resaltarCampos();
-        }
-    }
-    
-}
 
 
 // Mostrar el modal al hacer clic en el botón "Guardar"
