@@ -227,6 +227,6 @@ async function buscarPedido(){
 
     } else {
         console.log("La posición proporcionada está fuera de rango.");
-            ("Numero de pedido no encontrado")
+            alert("Numero de pedido no encontrado");
     }
     }
