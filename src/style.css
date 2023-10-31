@@ -858,7 +858,7 @@ li{
     margin: 0;
     width: 14mm;
     height: 7mm;  
-    padding-left: 1.5mm;  
+    padding-left: 1.5mm;
 }
 
 .derP{
@@ -1782,8 +1782,10 @@ li{
 
     #guardar:active {
         visibility: hidden;
+        display: none;
         transition-duration: 3s;
         visibility: visible;
+        display: inline-flex;
     }
     
     .derP{

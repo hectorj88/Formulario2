@@ -78,6 +78,7 @@ var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
 
+
 function ejecFunc(){
     if(validarCampos()===true){
         resaltarCampos();
@@ -89,8 +90,6 @@ function ejecFunc(){
     }
 }
 $botonGuardar.onclick = ejecFunc;
-
-
 
 function guardarPdf(){
     
@@ -178,8 +177,7 @@ function enviarFormulario(){
             "cc2": $cc2.value,
             "ce2": $ce2.value,
             "cedula3": $cedula3.value,
-            "cedula4": $cedula4.value,
-                       
+            "cedula4": $cedula4.value,                       
         })
     });
 }
