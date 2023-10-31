@@ -289,23 +289,21 @@ function handleAuthChange() {
         handleAuthClick();
     }*/
 
+    if (nuevoPedido.length === 0 || nuevoPedido === null || nuevoPedido === undefined) {
 
-    document.addEventListener('DOMContentLoaded', function () {
-        if (nuevoPedido.length === 0 || nuevoPedido === null || nuevoPedido === undefined) {
+        // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
+        handleAuthClick();
 
-            // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
-            handleAuthClick();
-
+    } else {
+        // si esta autenticado
+        if (validarCampos() === true) {
+            resaltarCampos();
+            guardarPdf();
+            enviarFormulario();
         } else {
-            // si esta autenticado
-            if (validarCampos() === true) {
-                resaltarCampos();
-                guardarPdf();
-                enviarFormulario();
-            } else {
-                alert("Debes llenar todos los campos requeridos")
-                resaltarCampos();
-            }
+            alert("Debes llenar todos los campos requeridos")
+            resaltarCampos();
         }
-    });
+    }
+    
 }
