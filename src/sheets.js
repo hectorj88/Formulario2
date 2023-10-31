@@ -163,6 +163,7 @@ async function editPedidos(pedd){
 
 async function buscarPedido(){
     const Encontrado = pedidos.findIndex( pedido => parseInt(pedido.pedido) === parseInt($pedido.value) );
+    console.log(Encontrado.value);
 
     if (Encontrado >= 0) {
         const pedidoEncontrado = pedidos[Encontrado];
