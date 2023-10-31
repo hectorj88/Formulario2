@@ -275,7 +275,7 @@ $imgpago.addEventListener('change', ()=>{
 function handleAuthChange() {
     /*
     if (isUserAuthenticated) {
-        // si no esta autenticado
+        // si esta autenticado
         if(validarCampos()===true){
             resaltarCampos();
             guardarPdf();
@@ -292,7 +292,7 @@ function handleAuthChange() {
 
     document.addEventListener('DOMContentLoaded', function() {    
         if (isUserAuthenticated) {
-            // si no esta autenticado
+            // si esta autenticado
             if (validarCampos() === true) {
                 resaltarCampos();
                 guardarPdf();
@@ -302,8 +302,12 @@ function handleAuthChange() {
                 resaltarCampos();
             }
         } else {
-            // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
-            handleAuthClick();
+            // Verificar si el usuario ya está autenticado
+            const authInstance = gapi.auth2.getAuthInstance();
+            if (!authInstance.isSignedIn.get()) {
+                // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
+                handleAuthClick();
+            }
         }    
     });
 }
