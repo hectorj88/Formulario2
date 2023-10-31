@@ -18,6 +18,7 @@ async function getPedidos(){
     }
 
     pedidos = [];
+    console.log(range.values) /*borrar despues de pruebas*/
     range.values.foreach((fila) => {
         if (isNaN(parseInt(fila[0])) || fila[5] ==! undefined) return;
         const nuevoPedido ={

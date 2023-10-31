@@ -271,11 +271,6 @@ $imgpago.addEventListener('change', ()=>{
     document.querySelector("#pago1").setAttribute('src',pagoURL2);
 })
 
-// Espera a que se cargue la página.
-window.onload = function () {
-    // Llama a la función de autenticación.
-    handleAuthChange(gapi.auth2.getAuthInstance().isSignedIn.get());
-};
 
 function handleAuthChange(isSignedIn) {
     if (isSignedIn) {
@@ -291,6 +286,5 @@ function handleAuthChange(isSignedIn) {
     } else {
         // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
         handleAuthClick();
-        //gapi.auth2.getAuthInstance().signIn();
     }
 }
