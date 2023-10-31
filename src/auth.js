@@ -21,6 +21,16 @@ let gisInited = false;
 document.getElementById("gapi").addEventListener("load",gapiLoaded());
 document.getElementById("gis").addEventListener("load",gisLoaded());
 
+
+let isUserAuthenticated = false; // Variable para rastrear el estado de autenticación
+
+function onSignIn(googleUser) {
+    // Esta función se llama cuando el usuario se autentica correctamente
+    isUserAuthenticated = true;
+}
+
+
+
 /*
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';*/
