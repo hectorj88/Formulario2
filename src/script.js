@@ -273,7 +273,8 @@ $imgpago.addEventListener('change', ()=>{
 
 
 function handleAuthChange() {
-    if (isUserAuthenticated == true) {
+    /*
+    if (isUserAuthenticated) {
         // si no esta autenticado
         if(validarCampos()===true){
             resaltarCampos();
@@ -286,5 +287,23 @@ function handleAuthChange() {
     } else {
         // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
         handleAuthClick();
-    }
+    }*/
+
+
+    document.addEventListener('DOMContentLoaded', function() {    
+        if (isUserAuthenticated) {
+            // si no esta autenticado
+            if (validarCampos() === true) {
+                resaltarCampos();
+                guardarPdf();
+                enviarFormulario();
+            } else {
+                alert("Debes llenar todos los campos requeridos")
+                resaltarCampos();
+            }
+        } else {
+            // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
+            handleAuthClick();
+        }    
+    });
 }
