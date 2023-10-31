@@ -1,4 +1,10 @@
 var $botonGuardar = document.querySelector("#guardar");
+var modal = document.getElementById('myModal');
+var opcion1Button = document.getElementById('opcion1');
+var opcion2Button = document.getElementById('opcion2');
+var opcion3Button = document.getElementById('opcion3');
+var opcion4Button = document.getElementById('opcion4');
+
 var $pedido = document.querySelector("#pedido");
 var $fecha = document.querySelector("#fecha");
 var $cuenta = document.querySelector("#cuenta");
@@ -307,3 +313,51 @@ function handleAuthChange() {
     }
     
 }
+
+
+// Mostrar el modal al hacer clic en el botón "Guardar"
+$botonGuardar.addEventListener('click', function() {
+    modal.style.display = 'block';
+});
+
+
+opcion1Button.addEventListener('click', function() {
+    modal.style.display = 'none';
+    handleAuthClick();
+});
+
+opcion2Button.addEventListener('click', function() {
+    modal.style.display = 'none';
+    // Realizar acciones relacionadas con la Opción Nuevo Pedido
+    if (validarCampos() === true) {
+        resaltarCampos();
+        guardarPdf();
+        enviarFormulario();
+    } else {
+        alert("Debes llenar todos los campos requeridos")
+        resaltarCampos();
+    }
+});
+
+opcion3Button.addEventListener('click', function() {
+    buscarPedido();
+    modal.style.display = 'none';
+    // Realizar acciones relacionadas con la Opción Buscar Pedido
+});
+
+opcion4Button.addEventListener('click', function() {
+    modal.style.display = 'none';
+    // Realizar acciones relacionadas con la Opción Actualizar Pedido
+});
+
+// Cerrar el modal al hacer clic fuera del contenido del modal
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+
+window.onload = function() {
+    alert("¡Bienvenido a mi página web!");
+};
