@@ -3,34 +3,37 @@
 /* exported handleAuthClick */
 /* exported handleSignoutClick */
 
-// TODO(developer): Set to client ID and API key from the Developer Console
+// TODO(developer): Establezca el ID de cliente y la clave API desde la consola de desarrollador
 const CLIENT_ID = '463066749424-rgk5td66egs5vn23r5jibabadq2rsdjf.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyB6sN1ePSrsktbVmqju-K3Ry--VQ-rZ0Mg';
 
-// Discovery doc URL for APIs used by the quickstart
+// Discovery doc URL para las API utilizadas por el quickstart
 const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
 
-// Authorization scopes required by the API; multiple scopes can be
-// included, separated by spaces.
+// Ámbitos de autorización requeridos por la API; se pueden incluir
+// varios ámbitos, separados por espacios.
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
+document.getElementById("gapi").addEventListener("load",gapiLoaded());
+document.getElementById("gis").addEventListener("load",gisLoaded());
+
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
- * Callback after api.js is loaded.
+ * Callback después de cargar api.js.
  */
 function gapiLoaded() {
     gapi.load('client', initializeGapiClient);
 }
 
 /**
- * Callback after the API client is loaded. Loads the
- * discovery doc to initialize the API.
+ * Callback después de cargar el cliente API.
+ * Carga el documento de descubrimiento para inicializar la API.
  */ 
 async function initializeGapiClient() {
     await gapi.client.init({
@@ -42,7 +45,7 @@ async function initializeGapiClient() {
 }
 
 /**
- * Callback after Google Identity Services are loaded.
+ * Devolución de llamada una vez cargados los Servicios de identidad de Google.
  */
 function gisLoaded() {
     tokenClient = google.accounts.oauth2.initTokenClient({
@@ -55,7 +58,7 @@ function gisLoaded() {
 }
 
 /**
- * Enables user interaction after all libraries are loaded.
+ * Permite la interacción del usuario una vez cargadas todas las bibliotecas.
  */
 function maybeEnableButtons() {
     if (gapiInited && gisInited) {
@@ -64,7 +67,7 @@ function maybeEnableButtons() {
 }
 
 /**
- *  Sign in the user upon button click.
+ *  Registrar al usuario al pulsar el botón.
  */
 function handleAuthClick() {
     tokenClient.callback = async (resp) => {

@@ -80,14 +80,15 @@ var $imgpago = document.querySelector("#pagofile");
 
 
 function ejecFunc(){
-    if(validarCampos()===true){
+    /*if(validarCampos()===true){
         resaltarCampos();
         guardarPdf();
         enviarFormulario();
     }else{
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();
-    }
+    }*/
+    handleAuthChange();
 }
 $botonGuardar.onclick = ejecFunc;
 
@@ -269,3 +270,27 @@ $imgpago.addEventListener('change', ()=>{
     let pagoURL2 = URL.createObjectURL(pago);
     document.querySelector("#pago1").setAttribute('src',pagoURL2);
 })
+
+// Espera a que se cargue la página.
+window.onload = function () {
+    // Llama a la función de autenticación.
+    handleAuthChange(gapi.auth2.getAuthInstance().isSignedIn.get());
+};
+
+function handleAuthChange(isSignedIn) {
+    if (isSignedIn) {
+        // si no esta autenticado
+        if(validarCampos()===true){
+            resaltarCampos();
+            guardarPdf();
+            enviarFormulario();
+        }else{
+            alert("Debes llenar todos los campos requeridos")
+            resaltarCampos();
+        }
+    } else {
+        // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
+        handleAuthClick();
+        gapi.auth2.getAuthInstance().signIn();
+    }
+}

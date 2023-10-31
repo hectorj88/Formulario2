@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="src/reset.css">
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" type="text/css" href="src/style.css" media="screen" />
-    <script src="https://apis.google.com/js/api.js" async defer></script>
-    <meta name="google-signin-client_id" content="463066749424-rgk5td66egs5vn23r5jibabadq2rsdjf.apps.googleusercontent.com">
     <title>Formulario</title>
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWJZGRYDH3"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-VWJZGRYDH3');
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VWJZGRYDH3');
 </script>
+
 <body>
 
     <form action="" autocomplete="off" class="formulario">
@@ -210,7 +212,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="reObReCo">
@@ -299,7 +300,6 @@
                         <label for="vCutoa">VR. Coutas:</label>
                         <input type="text" id="vrCuota">
                     </div>
-                    
                 </div>
 
                 <div class="observaciones">
@@ -470,8 +470,10 @@
         </form>
     </div>
 
-
+    
     <script src="src/script.js"></script>
+    <script src="https://apis.google.com/js/api.js" id="gapi" defer></script>
+    <script src="https://accounts.google.com/gsi/client" id="gis"></script>
     <script async defer src="src/auth.js"></script>
     <script async defer src="src/sheets.js"></script>
 </body>
