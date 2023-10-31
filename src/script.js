@@ -291,6 +291,6 @@ function handleAuthChange(isSignedIn) {
     } else {
         // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
         handleAuthClick();
-        gapi.auth2.getAuthInstance().signIn();
+        //gapi.auth2.getAuthInstance().signIn();
     }
 }
