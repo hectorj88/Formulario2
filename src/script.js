@@ -290,8 +290,13 @@ function handleAuthChange() {
     }*/
 
 
-    document.addEventListener('DOMContentLoaded', function() {    
-        if (isUserAuthenticated) {
+    document.addEventListener('DOMContentLoaded', function () {
+        if (nuevoPedido.length === 0 || nuevoPedido === null || nuevoPedido === undefined) {
+
+            // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
+            handleAuthClick();
+
+        } else {
             // si esta autenticado
             if (validarCampos() === true) {
                 resaltarCampos();
@@ -301,13 +306,6 @@ function handleAuthChange() {
                 alert("Debes llenar todos los campos requeridos")
                 resaltarCampos();
             }
-        } else {
-            // Verificar si el usuario ya está autenticado
-            const authInstance = gapi.auth2.getAuthInstance();
-            if (!authInstance.isSignedIn.get()) {
-                // El usuario no está autenticado, muestra la ventana emergente de inicio de sesión.
-                handleAuthClick();
-            }
-        }    
+        }
     });
 }
