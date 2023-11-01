@@ -21,6 +21,7 @@ async function getPedidos(){
     }
     const range = response.result;
     if (!range || !range.values || range.values.length == 0) {
+        //Enviando un mensaje por consola en caso de que no se encuentren datos
         console.warn("No se encontraron valores")
         return;
     }
@@ -29,11 +30,13 @@ async function getPedidos(){
         console.warn("No se encontraron valores en la copia")
         return;
     }
+    //obteniendo la cantidad de filas en la hoja de copia
     filaPedido = copia.values.length + 1;
 
     pedidos = [];
     console.log(range.values) /*borrar despues de pruebas*/
     range.values.forEach((fila) => {
+        //guardamos los datos de los pedidos en el sheet en un objeto
         if (isNaN(parseInt(fila[0]))) return;
         const nuevoPedido ={
             pedido: fila[0],
@@ -99,10 +102,14 @@ async function getPedidos(){
 }
 
 async function editPedidos(){
+    //buscamos el numero de pedido a editar
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
     
     if (filaEditar >= 0) {
+        //si se encontro el numero de pedido realizamos la edicion
+        //realizamos una copia del pedido anterior, para tener los registros de cambios
         let copiaAnterior = Object.values(pedidos[filaEditar-2]);
+        //creamos el vector con los datos a actualizar
         const update = [
             $pedido.value,
             $fecha.value,
@@ -162,6 +169,7 @@ async function editPedidos(){
             $cedula4.value
         ];
 
+        //realizamos la actualizacion en el sheet
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             range: `pedidos!A${filaEditar}:BE${filaEditar}`,
@@ -169,12 +177,14 @@ async function editPedidos(){
             valueInputOption: "USER_ENTERED"
         });
 
+        //guardamos la copia del registro antes de la edicion
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             range: `copia!A${filaPedido}:BE${filaPedido}`,
             values: [copiaAnterior],
             valueInputOption: "USER_ENTERED"
         });
+        //actualizamos los datos registrados
         getPedidos();
     }else{
         alert("No se ha podido realizar la actualización");
@@ -182,14 +192,14 @@ async function editPedidos(){
 }
 
 async function buscarPedido() {
+    //buscamos el pedido
     const Encontrado = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value));
 
     if (Encontrado >= 0) {
+        //si encontramos el pedido, llevamos los datos al formulario
         const pedidoEncontrado = pedidos[Encontrado];
         console.log("Datos del pedido encontrado:", pedidoEncontrado);
 
-        // Ahora puedes acceder a los campos de pedidoEncontrado
-        //const numeroPedido = pedidoEncontrado.pedido;
         $pedido.value = parseInt(pedidoEncontrado.pedido);
         $fecha.value = pedidoEncontrado.fecha;
         $cuenta.value = pedidoEncontrado.cuenta;
@@ -254,17 +264,25 @@ async function buscarPedido() {
 
 
     } else {
+        //si no se encontro el numero de pedido, se le indica al usuario
         console.log("La posición proporcionada está fuera de rango.");
         alert("Numero de pedido no encontrado");
     }
 }
 
-async function nuevoPedidos(){
+async function nuevoPedido(){
+    //obteniendo el valor de la fila nueva para agregar la informacion del pedido
     const filaNueva = pedidos.length +2 ;
+    //obteniendo el nuevo numero de pedido a agregar al formulario
+    let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido)+1);
+    //asignado el nuevo valor al input del formulario
+    $pedido,value = pedidoNuevo;
 
+    //guardando la informacion en el sheet
     if (filaNueva >= 0) {
+        //obteniendo los datos del formulario
         const update = [
-            $pedido.value,
+            pedidoNuevo,
             $fecha.value,
             $cuenta.value,
             $nombre1.value,
@@ -320,7 +338,7 @@ async function nuevoPedidos(){
             $ce2.value,
             $cedula3.value,
             $cedula4.value
-        ]
+        ];
 
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
@@ -328,6 +346,8 @@ async function nuevoPedidos(){
             values: [update],
             valueInputOption: "USER_ENTERED"
         });
+        //actualizando registros
+        getPedidos();
     }
 
 }
