@@ -301,9 +301,10 @@ opcion2Button.addEventListener('click', function() {
     }
 });
 
-opcion3Button.addEventListener('click', function() {
+opcion3Button.addEventListener('click', function(event) {
     buscarPedido();
     modal.style.display = 'none';
+    event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Buscar Pedido
 });
 
@@ -321,6 +322,5 @@ window.addEventListener('click', function(event) {
 
 
 window.onload = function() {
-    alert("¡Bienvenido a mi página web!");
     modal.style.display = 'block'
 };
