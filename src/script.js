@@ -197,11 +197,11 @@ function validarCampos(){
 }
 
 function resaltarCampos(){
-    if($pedido.value.length === 0){
+    /*if($pedido.value.length === 0){
         $pedido.style.background = "rgb(255, 209, 209)";
     }else{
         $pedido.style.background = "transparent";
-    }
+    }*/
 
     if($nombre1.value.length === 0){
         $nombre1.style.background = "rgb(255, 209, 209)";
@@ -288,13 +288,14 @@ opcion1Button.addEventListener('click', function() {
     handleAuthClick();
 });
 
-opcion2Button.addEventListener('click', function() {
+opcion2Button.addEventListener('click', async function(event) {
     modal.style.display = 'none';
     // Realizar acciones relacionadas con la Opción Nuevo Pedido
     if (validarCampos() === true) {
-        resaltarCampos();
-        nuevoPedido();      
-        guardarPdf();
+        await resaltarCampos();
+        await nuevoPedido();    
+        await guardarPdf();
+        event.preventDefault(); // Evitar la recarga de la página
     } else {
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();
