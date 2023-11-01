@@ -98,6 +98,7 @@ async function getPedidos(){
 
 async function editPedidos(){
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
+    let filaPedido = copia.values.length + 2;
     
     if (filaEditar >= 0) {
         const copiaAnterior = pedido[filaEditar-2]
@@ -169,7 +170,7 @@ async function editPedidos(){
 
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: `copia!A${copia.values.length+2}:BH${copia.values.length+2}`,
+            range: `copia!A${filaPedido}:BH${filaPedido}`,
             values: [copiaAnterior],
             valueInputOption: "USER_ENTERED"
         });
