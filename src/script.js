@@ -97,7 +97,7 @@ function ejecFunc(){
 }
 $botonGuardar.onclick = ejecFunc;
 
-function guardarPdf(){
+async function guardarPdf(){
     
     $botonGuardar.style.background = "#CFE6F9";
     $botonGuardar.style.color = "#CFE6F9";
@@ -196,7 +196,7 @@ function validarCampos(){
     }
 }
 
-function resaltarCampos(){
+async function resaltarCampos(){
     /*if($pedido.value.length === 0){
         $pedido.style.background = "rgb(255, 209, 209)";
     }else{
