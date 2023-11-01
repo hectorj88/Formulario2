@@ -7,6 +7,10 @@ async function getPedidos(){
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             range: 'pedidos!A:BH',
         });
+        response = await gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
+            copia: 'copia!A:BH',
+        });
     } catch (err) {
         console.error(err)
         return;
@@ -16,6 +20,11 @@ async function getPedidos(){
         console.warn("No se encontraron valores")
         return;
     }
+    if (!range || !copia.values || copia.values.length == 0) {
+        console.warn("No se encontraron valores en la copia")
+        return;
+    }
+    console.log("Numero de registros en la copia", copia.values.length);
 
     pedidos = [];
     console.log(range.values) /*borrar despues de pruebas*/
@@ -92,6 +101,7 @@ async function editPedidos(){
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
 
     if (filaEditar >= 0) {
+        const copia = pedido[filaEditar-2]
         const update = [
             $pedido.value,
             $fecha.value,
@@ -230,7 +240,7 @@ async function buscarPedido() {
         if (pedidoEncontrado.cedula4 >= 0){
             $cedula4.value = pedidoEncontrado.cedula4;
         }
-        
+        alert("Pedido encontrado");
 
 
     } else {
