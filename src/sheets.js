@@ -211,18 +211,18 @@ async function buscarPedido() {
         $rTeleres4.value = pedidoEncontrado.rTeleres4;
         $oCuotas.value = pedidoEncontrado.oCuotas;
         $oValor.value = pedidoEncontrado.oValor;
-        $cedula1.value = pedidoEncontrado.cedula1;
+        $cedula1.value = parseInt(pedidoEncontrado.cedula1);
         $cc1.value = pedidoEncontrado.cc1;
         $ce1.value = pedidoEncontrado.ce1;
         $relacionista.value = pedidoEncontrado.relacionista;
         $colaborador.value = pedidoEncontrado.colaborador;
         $director.value = pedidoEncontrado.director;
-        $organizador.value = pedidoEncontrado.organizador;
-        $cedula2.value = pedidoEncontrado.cedula2;
+        $organizador.value = parseInt(pedidoEncontrado.organizador);
+        $cedula2.value = parseInt(pedidoEncontrado.cedula2);
         $cc2.value = pedidoEncontrado.cc2;
         $ce2.value = pedidoEncontrado.ce2;
-        $cedula3.value = pedidoEncontrado.cedula3;
-        $cedula4.value = pedidoEncontrado.cedula4;
+        $cedula3.value = parseInt(pedidoEncontrado.cedula3);
+        $cedula4.value = parseInt(pedidoEncontrado.cedula4);
 
 
     } else {
