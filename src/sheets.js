@@ -279,7 +279,6 @@ async function nuevoPedidos(){
             $cCargo.value,
             $cAntig.value,
             $cSueldo.value,
-            $
             $rNomb1.value,
             $rp1.value,
             $rTele1.value,
