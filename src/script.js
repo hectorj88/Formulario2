@@ -293,8 +293,8 @@ opcion2Button.addEventListener('click', function() {
     // Realizar acciones relacionadas con la Opción Nuevo Pedido
     if (validarCampos() === true) {
         resaltarCampos();
+        nuevoPedidos();      
         guardarPdf();
-        enviarFormulario();
     } else {
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();

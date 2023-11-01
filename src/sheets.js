@@ -89,7 +89,7 @@ async function getPedidos(){
 }
 
 async function editPedidos(){
-    const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value));
+    const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
 
     if (filaEditar >= 0) {
         const update = [
@@ -237,4 +237,77 @@ async function buscarPedido() {
         console.log("La posición proporcionada está fuera de rango.");
         alert("Numero de pedido no encontrado");
     }
+}
+
+async function nuevoPedidos(){
+    const filaNueva = pedidos.length +2 ;
+
+    if (filaNueva >= 0) {
+        const update = [
+            $pedido.value,
+            $fecha.value,
+            $cuenta.value,
+            $nombre1.value,
+            $apellido.value,
+            $direccion.value,
+            $telefono.value,
+            $barrio.value,
+            $empresa.value,
+            $telefono2.value,
+            $direccion2.value,
+            $cargo.value,
+            $antiguo.value,
+            $sueldo.value,
+            $email.value,
+            $fCobro.value,
+            $nNino.value,
+            $ciudad.value,
+            $cNomb.value,
+            $cApell.value,
+            $cEmpresa.value,
+            $ctele.value,
+            $cDir.value,
+            $cCargo.value,
+            $cAntig.value,
+            $cSueldo.value,
+            $rNomb1.value,
+            $rp1.value,
+            $rTele1.value,
+            $rTeleres1.value,
+            $rNomb2.value,
+            $rp2.value,
+            $rTele2.value,
+            $rTeleres2.value,
+            $rNomb3.value,
+            $rp3.value,
+            $rTele3.value,
+            $rTeleres3.value,
+            $rNomb4.value,
+            $rp4.value,
+            $rTele4.value,
+            $rTeleres4.value,
+            $oCuotas.value,
+            $oValor.value,
+            $cedula1.value,
+            $cc1.value,
+            $ce1.value,
+            $relacionista.value,
+            $colaborador.value,
+            $director.value,
+            $organizador.value,
+            $cedula2.value,
+            $cc2.value,
+            $ce2.value,
+            $cedula3.value,
+            $cedula4.value
+        ]
+
+        response = await gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
+            range: `pedidos!A${filaNueva}:BH${filaNueva}`,
+            values: [update],
+            valueInputOption: "USER_ENTERED"
+        });
+    }
+
 }
