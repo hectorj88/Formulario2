@@ -322,5 +322,5 @@ window.addEventListener('click', function(event) {
 
 window.onload = function() {
     alert("¡Bienvenido a mi página web!");
-    handleAuthClick();
+    modal.style.display = 'block'
 };

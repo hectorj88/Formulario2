@@ -170,6 +170,9 @@ async function buscarPedido() {
 
         // Ahora puedes acceder a los campos de pedidoEncontrado
         //const numeroPedido = pedidoEncontrado.pedido;
+        $pedido.value = parseInt(pedidoEncontrado.pedido);
+        $fecha.value = pedidoEncontrado.fecha;
+        $cuenta.value = pedidoEncontrado.cuenta;
         $nombre1.value = pedidoEncontrado.nombre1;
         $apellido.value = pedidoEncontrado.apellido;
         $direccion.value = pedidoEncontrado.direccion;
