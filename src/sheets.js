@@ -60,36 +60,36 @@ async function getPedidos(){
             cCargo: fila[23],
             cAntig: fila[24],
             cSueldo: fila[25],
-            rNomb1: fila[29],
-            rp1: fila[30],
-            rTele1: fila[31],
-            rTeleres1: fila[32],
-            rNomb2: fila[33],
-            rp2: fila[34],
-            rTele2: fila[35],
-            rTeleres2: fila[36],
-            rNomb3: fila[37],
-            rp3: fila[38],
-            rTele3: fila[39],
-            rTeleres3: fila[40],
-            rNomb4: fila[41],
-            rp4: fila[42],
-            rTele4: fila[43],
-            rTeleres4: fila[44],
-            oCuotas: fila[45],
-            oValor: fila[46],
-            cedula1: fila[47],
-            cc1: fila[48],
-            ce1: fila[49],
-            relacionista: fila[50],
-            colaborador: fila[51],
-            director: fila[52],
-            organizador: fila[53],
-            cedula2: fila[55],
-            cc2: fila[56],
-            ce2: fila[57],
-            cedula3: fila[58],
-            cedula4: fila[59]
+            rNomb1: fila[26],
+            rp1: fila[27],
+            rTele1: fila[28],
+            rTeleres1: fila[29],
+            rNomb2: fila[30],
+            rp2: fila[31],
+            rTele2: fila[32],
+            rTeleres2: fila[33],
+            rNomb3: fila[34],
+            rp3: fila[35],
+            rTele3: fila[36],
+            rTeleres3: fila[37],
+            rNomb4: fila[38],
+            rp4: fila[39],
+            rTele4: fila[40],
+            rTeleres4: fila[41],
+            oCuotas: fila[42],
+            oValor: fila[43],
+            cedula1: fila[44],
+            cc1: fila[45],
+            ce1: fila[46],
+            relacionista: fila[47],
+            colaborador: fila[48],
+            director: fila[49],
+            organizador: fila[50],
+            cedula2: fila[51],
+            cc2: fila[52],
+            ce2: fila[53],
+            cedula3: fila[54],
+            cedula4: fila[55]
         };
         pedidos.push(nuevoPedido);
     });
@@ -98,9 +98,9 @@ async function getPedidos(){
 
 async function editPedidos(){
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
-
+    
     if (filaEditar >= 0) {
-        const copia = pedido[filaEditar-2]
+        const copiaAnterior = pedido[filaEditar-2]
         const update = [
             $pedido.value,
             $fecha.value,
@@ -164,6 +164,13 @@ async function editPedidos(){
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             range: `pedidos!A${filaEditar}:BH${filaEditar}`,
             values: [update],
+            valueInputOption: "USER_ENTERED"
+        });
+
+        response = await gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
+            range: `copia!A${copia.values.length+2}:BH${copia.values.length+2}`,
+            values: [copiaAnterior],
             valueInputOption: "USER_ENTERED"
         });
     }
