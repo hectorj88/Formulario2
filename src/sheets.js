@@ -184,7 +184,7 @@ async function buscarPedido() {
         $direccion2.value = pedidoEncontrado.direccion2;
         $cargo.value = pedidoEncontrado.cargo;
         $antiguo.value = pedidoEncontrado.antiguo;
-        $sueldo.value = parseInt(pedidoEncontrado.sueldo);
+        $sueldo.value = pedidoEncontrado.sueldo;
         $email.value = pedidoEncontrado.email;
         $fCobro.value = pedidoEncontrado.fCobro;
         $nNino.value = pedidoEncontrado.nNino;
@@ -225,8 +225,13 @@ async function buscarPedido() {
         $cedula2.value = pedidoEncontrado.cedula2;
         $cc2.value = pedidoEncontrado.cc2;
         $ce2.value = pedidoEncontrado.ce2;
-        $cedula3.value = pedidoEncontrado.cedula3;
-        $cedula4.value = pedidoEncontrado.cedula4;
+        if (pedidoEncontrado.cedula3 >= 0){
+            $cedula3.value = pedidoEncontrado.cedula3;
+        }
+        if (pedidoEncontrado.cedula4 >= 0){
+            $cedula4.value = pedidoEncontrado.cedula4;
+        }
+        
 
 
     } else {
