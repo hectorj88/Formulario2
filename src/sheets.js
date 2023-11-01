@@ -45,42 +45,43 @@ async function getPedidos(){
             cEmpresa: fila[20],
             cTele: fila[21],
             cDir: fila[22],
-            cAntig: fila[22],
-            cSueldo: fila[23],
-            cmarca: fila[24],
-            cModelo: fila[25],
-            cPlaca: fila[26],
-            rnomb1: fila[27],
-            rp1: fila[28],
-            rTele1: fila[29],
-            rTeleres1: fila[30],
-            rNomb2: fila[31],
-            rp2: fila[32],
-            rTele2: fila[33],
-            rTeleres2: fila[34],
-            rNomb3: fila[35],
-            rp3: fila[36],
-            rTele3: fila[34],
-            rTeleres3: fila[35],
-            rNomb4: fila[36],
-            rp4: fila[37],
-            rTele4: fila[38],
-            rTeleres4: fila[39],
-            oCuotas: fila[40],
-            oValor: fila[41],
-            cedula1: fila[42],
-            cc1: fila[43],
-            ce1: fila[44],
-            relacionista: fila[45],
-            colaborador: fila[46],
-            director: fila[47],
-            organizador: fila[48],
-            rematador: fila[49],
-            cedula2: fila[50],
-            cc2: fila[51],
-            ce2: fila[52],
-            cedula3: fila[53],
-            cedula4: fila[54]
+            cCargo: fila[23],
+            cAntig: fila[24],
+            cSueldo: fila[25],
+            cmarca: fila[26],
+            cModelo: fila[27],
+            cPlaca: fila[28],
+            rnomb1: fila[29],
+            rp1: fila[30],
+            rTele1: fila[31],
+            rTeleres1: fila[32],
+            rNomb2: fila[33],
+            rp2: fila[34],
+            rTele2: fila[35],
+            rTeleres2: fila[36],
+            rNomb3: fila[37],
+            rp3: fila[38],
+            rTele3: fila[39],
+            rTeleres3: fila[40],
+            rNomb4: fila[41],
+            rp4: fila[42],
+            rTele4: fila[43],
+            rTeleres4: fila[44],
+            oCuotas: fila[45],
+            oValor: fila[46],
+            cedula1: fila[47],
+            cc1: fila[48],
+            ce1: fila[49],
+            relacionista: fila[50],
+            colaborador: fila[51],
+            director: fila[52],
+            organizador: fila[53],
+            rematador: fila[54],
+            cedula2: fila[55],
+            cc2: fila[56],
+            ce2: fila[57],
+            cedula3: fila[58],
+            cedula4: fila[59]
         };
         pedidos.push(nuevoPedido);
     });
@@ -214,18 +215,18 @@ async function buscarPedido() {
         $rTeleres4.value = pedidoEncontrado.rTeleres4;
         $oCuotas.value = pedidoEncontrado.oCuotas;
         $oValor.value = pedidoEncontrado.oValor;
-        $cedula1.value = parseInt(pedidoEncontrado.cedula1);
+        $cedula1.value = pedidoEncontrado.cedula1;
         $cc1.value = pedidoEncontrado.cc1;
         $ce1.value = pedidoEncontrado.ce1;
         $relacionista.value = pedidoEncontrado.relacionista;
         $colaborador.value = pedidoEncontrado.colaborador;
         $director.value = pedidoEncontrado.director;
-        $organizador.value = parseInt(pedidoEncontrado.organizador);
-        $cedula2.value = parseInt(pedidoEncontrado.cedula2);
+        $organizador.value = pedidoEncontrado.organizador;
+        $cedula2.value = pedidoEncontrado.cedula2;
         $cc2.value = pedidoEncontrado.cc2;
         $ce2.value = pedidoEncontrado.ce2;
-        $cedula3.value = parseInt(pedidoEncontrado.cedula3);
-        $cedula4.value = parseInt(pedidoEncontrado.cedula4);
+        $cedula3.value = pedidoEncontrado.cedula3;
+        $cedula4.value = pedidoEncontrado.cedula4;
 
 
     } else {
