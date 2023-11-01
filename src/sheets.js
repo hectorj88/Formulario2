@@ -1,4 +1,6 @@
+//Variables accesibles desde cualquier parte
 let pedidos;
+let filaPedido;
 
 async function getPedidos(){
     let response;
@@ -27,7 +29,7 @@ async function getPedidos(){
         console.warn("No se encontraron valores en la copia")
         return;
     }
-    console.log("Numero de registros en la copia", copia.values.length);
+    filaPedido = copia.values.length + 2;
 
     pedidos = [];
     console.log(range.values) /*borrar despues de pruebas*/
@@ -98,7 +100,6 @@ async function getPedidos(){
 
 async function editPedidos(){
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
-    let filaPedido = copia.values.length + 2;
     
     if (filaEditar >= 0) {
         const copiaAnterior = pedido[filaEditar-2]
