@@ -7,11 +7,11 @@ async function getPedidos(){
         //conexion con los sheets
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: 'pedidos!A:BH',
+            range: 'pedidos!A:BE',
         });
         response2 = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: 'copia!A:BH',
+            range: 'copia!A:BE',
         });
     } catch (err) {
         console.error(err)
@@ -60,9 +60,6 @@ async function getPedidos(){
             cCargo: fila[23],
             cAntig: fila[24],
             cSueldo: fila[25],
-            cmarca: fila[26],
-            cModelo: fila[27],
-            cPlaca: fila[28],
             rNomb1: fila[29],
             rp1: fila[30],
             rTele1: fila[31],
@@ -88,7 +85,6 @@ async function getPedidos(){
             colaborador: fila[51],
             director: fila[52],
             organizador: fila[53],
-            rematador: fila[54],
             cedula2: fila[55],
             cc2: fila[56],
             ce2: fila[57],
@@ -131,7 +127,7 @@ async function editPedidos(){
             $cDir.value,
             $cCargo.value,
             $cAntig.value,
-            $cSueldo.value,
+            $cSueldo.value,            
             $rNomb1.value,
             $rp1.value,
             $rTele1.value,
@@ -283,6 +279,7 @@ async function nuevoPedidos(){
             $cCargo.value,
             $cAntig.value,
             $cSueldo.value,
+            $
             $rNomb1.value,
             $rp1.value,
             $rTele1.value,
