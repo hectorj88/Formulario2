@@ -102,7 +102,7 @@ async function editPedidos(){
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
     
     if (filaEditar >= 0) {
-        let copiaAnterior = pedidos[filaEditar-2];
+        let copiaAnterior = Object.values(pedidos[filaEditar-2]);
         const update = [
             $pedido.value,
             $fecha.value,
