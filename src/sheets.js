@@ -11,7 +11,7 @@ async function getPedidos(){
         });
         response2 = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            copia: 'copia!A:BH',
+            range: 'copia!A:BH',
         });
     } catch (err) {
         console.error(err)
