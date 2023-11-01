@@ -29,7 +29,7 @@ async function getPedidos(){
         console.warn("No se encontraron valores en la copia")
         return;
     }
-    filaPedido = copia.values.length + 2;
+    filaPedido = copia.values.length + 1;
 
     pedidos = [];
     console.log(range.values) /*borrar despues de pruebas*/
@@ -175,8 +175,10 @@ async function editPedidos(){
             values: [copiaAnterior],
             valueInputOption: "USER_ENTERED"
         });
+        getPedidos();
+    }else{
+        alert("No se ha podido realizar la actualización");
     }
-
 }
 
 async function buscarPedido() {
