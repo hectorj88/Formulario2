@@ -2,12 +2,14 @@ let pedidos;
 
 async function getPedidos(){
     let response;
+    let response2;
     try {
+        //conexion con los sheets
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             range: 'pedidos!A:BH',
         });
-        response = await gapi.client.sheets.spreadsheets.values.get({
+        response2 = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
             copia: 'copia!A:BH',
         });
@@ -20,7 +22,8 @@ async function getPedidos(){
         console.warn("No se encontraron valores")
         return;
     }
-    if (!range || !copia.values || copia.values.length == 0) {
+    const copia = response2.result;
+    if (!copia || !copia.values || copia.values.length == 0) {
         console.warn("No se encontraron valores en la copia")
         return;
     }
