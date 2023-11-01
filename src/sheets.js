@@ -153,7 +153,7 @@ async function editPedidos(){
 
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: 'pedidos!A${filaEditar}:BH${filaEditar}',
+            range: `pedidos!A${filaEditar}:BH${filaEditar}`,
             values: [update],
             valueInputOption: "USER_ENTERED"
         });
