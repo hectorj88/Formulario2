@@ -308,8 +308,10 @@ opcion3Button.addEventListener('click', function(event) {
     // Realizar acciones relacionadas con la Opción Buscar Pedido
 });
 
-opcion4Button.addEventListener('click', function() {
+opcion4Button.addEventListener('click', function(event) {
     modal.style.display = 'none';
+    editPedidos();
+    event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Actualizar Pedido
 });
 
