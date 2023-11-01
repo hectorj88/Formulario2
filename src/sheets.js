@@ -163,8 +163,6 @@ async function editPedidos(pedd){
 
 async function buscarPedido() {
     const Encontrado = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value));
-    console.log(pedidos.pedido);
-    console.log($pedido.value);
 
     if (Encontrado >= 0) {
         const pedidoEncontrado = pedidos[Encontrado];
@@ -182,7 +180,7 @@ async function buscarPedido() {
         $direccion2.value = pedidoEncontrado.direccion2;
         $cargo.value = pedidoEncontrado.cargo;
         $antiguo.value = pedidoEncontrado.antiguo;
-        $sueldo.value = pedidoEncontrado.sueldo;
+        $sueldo.value = parseInt(pedidoEncontrado.sueldo);
         $email.value = pedidoEncontrado.email;
         $fCobro.value = pedidoEncontrado.fCobro;
         $nNino.value = pedidoEncontrado.nNino;
@@ -195,7 +193,7 @@ async function buscarPedido() {
         $cCargo.value = pedidoEncontrado.cCargo;
         $cAntig.value = pedidoEncontrado.cAntig;
         $cSueldo.value = pedidoEncontrado.cSueldo;
-        rNomb1.value = pedidoEncontrado.rNomb1;
+        $rNomb1.value = pedidoEncontrado.rNomb1;
         $rp1.value = pedidoEncontrado.rp1;
         $rTele1.value = pedidoEncontrado.rTele1;
         $rTeleres1.value = pedidoEncontrado.rTeleres1;
