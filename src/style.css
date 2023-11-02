@@ -1214,8 +1214,8 @@ li{
     }
     
     #antiguedad{
-        min-width: 22mm;
-        max-width: 22mm;
+        min-width: 20mm;
+        max-width: 20mm;
         font-weight: bold;
     }
     
@@ -1252,8 +1252,8 @@ li{
     }
     
     #fCobro{
-        min-width: 32mm;
-        max-width: 32mm;
+        min-width: 30mm;
+        max-width: 30mm;
     }
     
     .ninoCiudad{
@@ -1340,8 +1340,8 @@ li{
     }
     
     #direCo{
-        min-width: 40mm;
-        max-width: 40mm;
+        min-width: 38mm;
+        max-width: 38mm;
     }
     
     .carAntSuel, .carAntSuel2{
@@ -1364,8 +1364,8 @@ li{
     }
     
     #antiCo{
-        min-width: 22mm;
-        max-width: 22mm;
+        min-width: 20mm;
+        max-width: 20mm;
     }
     
     #suelCo{
@@ -1610,8 +1610,8 @@ li{
     }
     
     #tomaCont{
-        min-width: 56mm;
-        max-width: 56mm;
+        min-width: 50mm;
+        max-width: 50mm;
         min-height: 6mm;
         max-height: 6mm;
     }
