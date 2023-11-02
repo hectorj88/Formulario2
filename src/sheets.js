@@ -9,11 +9,11 @@ async function getPedidos(){
         //conexion con los sheets
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: 'pedidos!A:BE',
+            range: 'pedidos!A:BJ',
         });
         response2 = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: 'copia!A:BE',
+            range: 'copia!A:BJ',
         });
     } catch (err) {
         console.error(err)
@@ -94,7 +94,13 @@ async function getPedidos(){
             cc2: fila[52],
             ce2: fila[53],
             cedula3: fila[54],
-            cedula4: fila[55]
+            cedula4: fila[55],
+            detColec: fila[56],
+            detValor: fila[57],
+            totalVal: fila[58],
+            nCoutas: fila[59],
+            vrCuota: fila[60],
+            observ: fila[61]
         };
         pedidos.push(nuevoPedido);
     });
@@ -166,13 +172,19 @@ async function editPedidos(){
             $cc2.value,
             $ce2.value,
             $cedula3.value,
-            $cedula4.value
+            $cedula4.value,
+            $detColec.value,
+            $detValor.value,
+            $totalVal.value,
+            $nCoutas.value,
+            $vrCuota.value,
+            $observ.value
         ];
 
         //realizamos la actualizacion en el sheet
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: `pedidos!A${filaEditar}:BE${filaEditar}`,
+            range: `pedidos!A${filaEditar}:BJ${filaEditar}`,
             values: [update],
             valueInputOption: "USER_ENTERED"
         });
@@ -180,7 +192,7 @@ async function editPedidos(){
         //guardamos la copia del registro antes de la edicion
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: `copia!A${filaPedido}:BE${filaPedido}`,
+            range: `copia!A${filaPedido}:BJ${filaPedido}`,
             values: [copiaAnterior],
             valueInputOption: "USER_ENTERED"
         });
@@ -254,13 +266,15 @@ async function buscarPedido() {
         $organizador.value = pedidoEncontrado.organizador;
         $cedula2.value = pedidoEncontrado.cedula2;
         $cc2.value = pedidoEncontrado.cc2;
-        $ce2.value = pedidoEncontrado.ce2;
-        if (pedidoEncontrado.cedula3 >= 0){
-            $cedula3.value = pedidoEncontrado.cedula3;
-        }
-        if (pedidoEncontrado.cedula4 >= 0){
-            $cedula4.value = pedidoEncontrado.cedula4;
-        }
+        $ce2.value = pedidoEncontrado.ce2;        
+        $cedula3.value = pedidoEncontrado.cedula3;  
+        $cedula4.value = pedidoEncontrado.cedula4;
+        $detColec.value = pedidoEncontrado.detColec;
+        $detValor.value = pedidoEncontrado.detValor;
+        $totalVal.value = pedidoEncontrado.totalVal;
+        $nCoutas.value = pedidoEncontrado.nCoutas;
+        $vrCuota.value = pedidoEncontrado.vrCuota;
+        $observ.value = pedidoEncontrado.observ;
         alert("Pedido encontrado");
 
 
@@ -338,7 +352,13 @@ async function nuevoPedido(){
             $cc2.value,
             $ce2.value,
             $cedula3.value,
-            $cedula4.value
+            $cedula4.value,
+            $detColec.value,
+            $detValor.value,
+            $totalVal.value,
+            $nCoutas.value,
+            $vrCuota.value,
+            $observ.value
         ];
 
         response = await gapi.client.sheets.spreadsheets.values.update({

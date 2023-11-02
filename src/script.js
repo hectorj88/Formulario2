@@ -80,6 +80,14 @@ var $cedula4 = document.querySelector("#cedula4");
 let $inputs = document.querySelector(".inputs");
 const formulario = document.getElementById(".formulario");
 
+var $detColec = document.getElementById('detColec');
+var $detValor = document.getElementById('detValor');
+var $totalVal = document.getElementById('totalVal');
+var $nCoutas = document.getElementById('nCoutas');
+var $vrCuota = document.getElementById('vrCuota');
+var $observ = document.getElementById('observ');
+
+
 var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
@@ -89,13 +97,12 @@ function ejecFunc(){
     /*if(validarCampos()===true){
         resaltarCampos();
         guardarPdf();
-        enviarFormulario();
     }else{
         alert("Debes llenar todos los campos requeridos")
         resaltarCampos();
     }*/
 }
-$botonGuardar.onclick = ejecFunc;
+//$botonGuardar.onclick = ejecFunc;
 
 async function guardarPdf(){
     
@@ -114,78 +121,6 @@ async function guardarPdf(){
     $imgcedula1.style.visibility = "visible";
     $imgcedula2.style.visibility = "visible";
     $imgpago.style.visibility = "visible";
-}
-
-function enviarFormulario(){
-    /*$botonGuardar.addEventListener("click", () => {
-        alert("prueba");
-    })*/
-
-    fetch('https://sheet.best/api/sheets/2a78aa3b-bb70-4d14-bddc-0fed465394da',{
-        method: "POST",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "pedido": $pedido.value,
-            "fecha": $fecha.value,
-            "cuenta": $cuenta.value,
-            "nombre1": $nombre1.value,
-            "apellido": $apellido.value,
-            "direccion": $direccion.value,
-            "telefono": $telefono.value,
-            "barrio": $barrio.value,
-            "empresa": $empresa.value,
-            "telefono2": $telefono2.value,
-            "direccion2": $direccion2.value,
-            "cargo": $cargo.value,
-            "antiguo": $antiguo.value,
-            "sueldo": $sueldo.value,
-            "email": $email.value,
-            "fCobro": $fCobro.value,
-            "nNino": $nNino.value,
-            "ciudad": $ciudad.value,
-            "cNomb": $cNomb.value,
-            "cApell": $cApell.value,
-            "cEmpresa": $cEmpresa.value,
-            "cTele": $ctele.value,
-            "cDir": $cDir.value,
-            "cCargo": $cCargo.value,
-            "cAntig": $cAntig.value,
-            "cSueldo": $cSueldo.value,
-            "rNomb1": $rNomb1.value,
-            "r-p-1": $rp1.value,
-            "rTele1": $rTele1.value,
-            "rTele-res1": $rTeleres1.value,
-            "rNomb2": $rNomb2.value,
-            "r-p-2": $rp2.value,
-            "rTele2": $rTele2.value,
-            "rTele-res2": $rTeleres2.value,
-            "rNomb3": $rNomb3.value,
-            "r-p-3": $rp3.value,
-            "rTele3": $rTele3.value,
-            "rTele-res3": $rTeleres3.value,
-            "rNomb4": $rNomb4.value,
-            "r-p-4": $rp4.value,
-            "rTele4": $rTele4.value,
-            "rTele-res4": $rTeleres4.value,
-            "oCuotas": $oCuotas.value,
-            "oValor": $oValor.value,
-            "cedula1": $cedula1.value,
-            "cc1": $cc1.value,
-            "ce1": $ce1.value,
-            "relacionista": $relacionista.value,
-            "colaborador": $colaborador.value,
-            "director": $director.value,
-            "organizador": $organizador.value,
-            "cedula2": $cedula2.value,
-            "cc2": $cc2.value,
-            "ce2": $ce2.value,
-            "cedula3": $cedula3.value,
-            "cedula4": $cedula4.value,                       
-        })
-    });
 }
 
 function validarCampos(){
@@ -324,33 +259,6 @@ window.addEventListener('click', function(event) {
     }
 });
 
-
 window.onload = function() {
     modal.style.display = 'block'
 };
-
-
-// Obtener el agente de usuario del navegador
-const userAgent = navigator.userAgent;
-
-// Verificar si el agente de usuario contiene cadenas típicas de dispositivos móviles
-const isMobile = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-
-if (isMobile) {
-    // El usuario está en un dispositivo móvil
-    alert("El usuario está en un dispositivo móvil");
-    console.log("El usuario está en un dispositivo móvil");
-} else {
-    // El usuario está en una computadora
-    console.log("El usuario está en una computadora");
-}
-
-// Función para verificar si se trata de un dispositivo móvil
-function isMobileDevice() {
-    // Obtener el ancho de la ventana del navegador
-    const windowWidth = window.innerWidth;
-    // Definir un umbral (por ejemplo, 768 píxeles) que determine si se considera un dispositivo móvil
-    const mobileThreshold = 768;
-    return windowWidth < mobileThreshold;
-}
-

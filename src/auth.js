@@ -1,7 +1,3 @@
-/* exported gapiLoaded */
-/* exported gisLoaded */
-/* exported handleAuthClick */
-/* exported handleSignoutClick */
 
 // TODO(developer): Establezca el ID de cliente y la clave API desde la consola de desarrollador
 const CLIENT_ID = '463066749424-rgk5td66egs5vn23r5jibabadq2rsdjf.apps.googleusercontent.com';
@@ -28,8 +24,6 @@ function onSignIn(googleUser) {
     // Esta función se llama cuando el usuario se autentica correctamente
     isUserAuthenticated = true;
 }
-
-
 
 /*
 document.getElementById('authorize_button').style.visibility = 'hidden';
