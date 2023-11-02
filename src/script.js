@@ -217,23 +217,25 @@ $botonGuardar.addEventListener('click', function () {
     modal.style.display = 'block';
 });
 
-
+//Autenticacion
 opcion1Button.addEventListener('click', function () {
     modal.style.display = 'none';
     handleAuthClick();
 });
 
+//Nuevo Pedido
 opcion2Button.addEventListener('click', function (event) {
-    modal.style.display = 'none';
+    
     if (!pedidos) {
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
     } else {
         // Realizar acciones relacionadas con la Opción Nuevo Pedido
+        modal.style.display = 'none';
         if (validarCampos() === true) {
             resaltarCampos();
             nuevoPedido();
-            guardarPdf();
+            guardarPdf();            
             event.preventDefault(); // Evitar la recarga de la página
         } else {
             alert("Debes llenar todos los campos requeridos")
@@ -243,6 +245,7 @@ opcion2Button.addEventListener('click', function (event) {
 
 });
 
+//Buscar Pedido
 opcion3Button.addEventListener('click', function (event) {
     if (!pedidos) {
         //validar si inicio sesion
@@ -255,6 +258,7 @@ opcion3Button.addEventListener('click', function (event) {
     }
 });
 
+//Actualizar Pedido
 opcion4Button.addEventListener('click', function (event) {
     if (!pedidos) {
         //validar si inicio sesion
@@ -262,7 +266,6 @@ opcion4Button.addEventListener('click', function (event) {
     } else {
         modal.style.display = 'none';
         editPedidos();
-        validar();
         event.preventDefault(); // Evitar la recarga de la página
         // Realizar acciones relacionadas con la Opción Actualizar Pedido
     }
@@ -275,6 +278,7 @@ window.addEventListener('click', function (event) {
     }
 });
 
+//Carga de Opciones al momento de ingresar a la pagina
 window.onload = function () {
     modal.style.display = 'block'
 };
@@ -292,4 +296,5 @@ document.addEventListener('keydown', function (event) {
 //bloqueando la ejecucion del boton derecho
 window.addEventListener('contextmenu', function (e) {
     e.preventDefault();
+    modal.style.display = 'block';
 });
