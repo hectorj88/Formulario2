@@ -294,7 +294,7 @@ opcion2Button.addEventListener('click', function(event) {
     // Realizar acciones relacionadas con la Opción Nuevo Pedido
     if (validarCampos() === true) {
         resaltarCampos();
-        nuevoPedido();    
+        nuevoPedido();
         guardarPdf();
         event.preventDefault(); // Evitar la recarga de la página
     } else {
@@ -328,3 +328,19 @@ window.addEventListener('click', function(event) {
 window.onload = function() {
     modal.style.display = 'block'
 };
+
+
+// Obtener el agente de usuario del navegador
+const userAgent = navigator.userAgent;
+
+// Verificar si el agente de usuario contiene cadenas típicas de dispositivos móviles
+const isMobile = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+if (isMobile) {
+    // El usuario está en un dispositivo móvil
+    alert("El usuario está en un dispositivo móvil");
+    console.log("El usuario está en un dispositivo móvil");
+} else {
+    // El usuario está en una computadora
+    console.log("El usuario está en una computadora");
+}

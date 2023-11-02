@@ -349,5 +349,4 @@ async function nuevoPedido(){
         //actualizando registros
         getPedidos();
     }
-
 }
