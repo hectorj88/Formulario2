@@ -189,9 +189,10 @@ function enviarFormulario(){
 }
 
 function validarCampos(){
-    if($pedido.value.length === 0 || $nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0){
+    if($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0){
         return false;
     }else{
+        $pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido)+1);
         return true;
     }
 }
@@ -288,13 +289,13 @@ opcion1Button.addEventListener('click', function() {
     handleAuthClick();
 });
 
-opcion2Button.addEventListener('click', async function(event) {
+opcion2Button.addEventListener('click', function(event) {
     modal.style.display = 'none';
     // Realizar acciones relacionadas con la Opción Nuevo Pedido
     if (validarCampos() === true) {
-        await resaltarCampos();
-        await nuevoPedido();    
-        await guardarPdf();
+        resaltarCampos();
+        nuevoPedido();    
+        guardarPdf();
         event.preventDefault(); // Evitar la recarga de la página
     } else {
         alert("Debes llenar todos los campos requeridos")

@@ -276,7 +276,7 @@ async function nuevoPedido(){
     //obteniendo el nuevo numero de pedido a agregar al formulario
     let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido)+1);
     //asignado el nuevo valor al input del formulario
-    $pedido,value = pedidoNuevo;
+    $pedido.value = pedidoNuevo;
 
     //guardando la informacion en el sheet
     if (filaNueva >= 0) {
