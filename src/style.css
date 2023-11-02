@@ -175,6 +175,7 @@ h1, #nitE{
     max-width: 80mm;
     font-weight: bold;
     font-size: 80%;
+    text-align: center;
 }
 
 .divMitadD{
@@ -187,8 +188,8 @@ h1, #nitE{
 }
 
 #direccion{
-    min-width: 69mm;
-    max-width: 69mm;
+    min-width: 68mm;
+    max-width: 68mm;
     font-weight: bold;
     font-size: 2.2mm;
 }

@@ -186,6 +186,7 @@ async function editPedidos(){
         });
         //actualizamos los datos registrados
         getPedidos();
+        guardarPdf();
     }else{
         alert("No se ha podido realizar la actualización");
     }

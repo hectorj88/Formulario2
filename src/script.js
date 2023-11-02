@@ -313,7 +313,6 @@ opcion3Button.addEventListener('click', function(event) {
 opcion4Button.addEventListener('click', function (event) {
     modal.style.display = 'none';
     editPedidos();
-    guardarPdf();
     event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Actualizar Pedido
 });
