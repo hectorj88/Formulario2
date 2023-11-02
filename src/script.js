@@ -310,17 +310,11 @@ opcion3Button.addEventListener('click', function(event) {
     // Realizar acciones relacionadas con la Opción Buscar Pedido
 });
 
-opcion4Button.addEventListener('click', function(event) {
+opcion4Button.addEventListener('click', function (event) {
     modal.style.display = 'none';
-    if($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0){
-        editPedidos();
-        guardarPdf();
-        event.preventDefault(); // Evitar la recarga de la página
-    }else{
-        alert("Debes llenar todos los campos requeridos")
-        resaltarCampos();
-    }
-
+    editPedidos();
+    guardarPdf();
+    event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Actualizar Pedido
 });
 
