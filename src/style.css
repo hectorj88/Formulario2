@@ -990,7 +990,7 @@ li{
 }
 
 
-@media screen and (width<900px){
+@media (max-width: 768px){
     input{
         border: none;
         height: 5mm;
@@ -1139,8 +1139,8 @@ li{
     }
     
     #direccion{
-        min-width: 74mm;
-        max-width: 74mm;
+        min-width: 73mm;
+        max-width: 73mm;
         font-weight: bold;
         font-size: 2.2mm;
     }
