@@ -344,3 +344,23 @@ if (isMobile) {
     // El usuario está en una computadora
     console.log("El usuario está en una computadora");
 }
+
+// Función para verificar si se trata de un dispositivo móvil
+function isMobileDevice() {
+    // Obtener el ancho de la ventana del navegador
+    const windowWidth = window.innerWidth;
+    // Definir un umbral (por ejemplo, 768 píxeles) que determine si se considera un dispositivo móvil
+    const mobileThreshold = 768;
+    return windowWidth < mobileThreshold;
+}
+
+// Llamar a la función para verificar si es un dispositivo móvil
+if (isMobileDevice()) {
+    // El usuario está en un dispositivo móvil, incluso si tiene activada la vista de escritorio
+    alert("El usuario está en un dispositivo móvil");
+    console.log("El usuario está en un dispositivo móvil");
+} else {
+    // El usuario está en una computadora o en una vista de escritorio
+    alert("El usuario está en un dispositivo móvil");
+    console.log("El usuario está en una computadora o en vista de escritorio");
+}
