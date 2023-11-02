@@ -92,14 +92,7 @@ var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
 
-function validar(){
-    if(!pedidos){
-        //validar si inicio sesion
-        alert("¡Debes Registrarte!")
-    }
-}
-
-function ejecFunc(){
+function ejecFunc() {
     /*if(validarCampos()===true){
         resaltarCampos();
         guardarPdf();
@@ -110,8 +103,8 @@ function ejecFunc(){
 }
 //$botonGuardar.onclick = ejecFunc;
 
-async function guardarPdf(){
-    
+async function guardarPdf() {
+
     $botonGuardar.style.background = "#CFE6F9";
     $botonGuardar.style.color = "#CFE6F9";
     $botonGuardar.style.visibility = "hidden";
@@ -120,7 +113,7 @@ async function guardarPdf(){
     $imgpago.style.visibility = "hidden";
 
     window.print();
-    
+
     $botonGuardar.style.background = "gray";
     $botonGuardar.style.color = "white";
     $botonGuardar.style.visibility = "visible";
@@ -129,145 +122,174 @@ async function guardarPdf(){
     $imgpago.style.visibility = "visible";
 }
 
-function validarCampos(){
-    if($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0){
+function validarCampos() {
+    if ($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0) {
         return false;
-    }else{
-        $pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido)+1);
+    } else {
+        $pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
         return true;
     }
 }
 
-async function resaltarCampos(){
+async function resaltarCampos() {
     /*if($pedido.value.length === 0){
         $pedido.style.background = "rgb(255, 209, 209)";
     }else{
         $pedido.style.background = "transparent";
     }*/
 
-    if($nombre1.value.length === 0){
+    if ($nombre1.value.length === 0) {
         $nombre1.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $nombre1.style.background = "transparent";
     }
 
-    if($apellido.value.length === 0){
+    if ($apellido.value.length === 0) {
         $apellido.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $apellido.style.background = "transparent";
     }
 
-    if($direccion.value.length === 0){
+    if ($direccion.value.length === 0) {
         $direccion.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $direccion.style.background = "transparent";
     }
 
-    if($telefono.value.length === 0){
+    if ($telefono.value.length === 0) {
         $telefono.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $telefono.style.background = "transparent";
     }
 
-    if($email.value.length === 0){
+    if ($email.value.length === 0) {
         $email.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $email.style.background = "transparent";
     }
 
-    if($ciudad.value.length === 0){
+    if ($ciudad.value.length === 0) {
         $ciudad.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $ciudad.style.background = "transparent";
     }
 
-    if($cedula1.value.length === 0){
+    if ($cedula1.value.length === 0) {
         $cedula1.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $cedula1.style.background = "white";
     }
 
-    if($relacionista.value.length === 0){
+    if ($relacionista.value.length === 0) {
         $relacionista.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $relacionista.style.background = "transparent";
     }
 
-    if($colaborador.value.length === 0){
+    if ($colaborador.value.length === 0) {
         $colaborador.style.background = "rgb(255, 209, 209)";
-    }else{
+    } else {
         $colaborador.style.background = "transparent";
     }
 }
 
-$imgcedula1.addEventListener('change', ()=>{
+$imgcedula1.addEventListener('change', () => {
     let imgfile1 = $imgcedula1.files[0];
     let imgfileURL1 = URL.createObjectURL(imgfile1);
-    document.querySelector("#visual1").setAttribute('src',imgfileURL1);
+    document.querySelector("#visual1").setAttribute('src', imgfileURL1);
 })
 
-$imgcedula2.addEventListener('change', ()=>{
+$imgcedula2.addEventListener('change', () => {
     let imgfile2 = $imgcedula2.files[0];
     let imgfileURL2 = URL.createObjectURL(imgfile2);
-    document.querySelector("#visual2").setAttribute('src',imgfileURL2);
+    document.querySelector("#visual2").setAttribute('src', imgfileURL2);
 })
 
-$imgpago.addEventListener('change', ()=>{
+$imgpago.addEventListener('change', () => {
     let pago = $imgpago.files[0];
     let pagoURL2 = URL.createObjectURL(pago);
-    document.querySelector("#pago1").setAttribute('src',pagoURL2);
+    document.querySelector("#pago1").setAttribute('src', pagoURL2);
 })
 
 
 // Mostrar el modal al hacer clic en el botón "Guardar"
-$botonGuardar.addEventListener('click', function() {
+$botonGuardar.addEventListener('click', function () {
     modal.style.display = 'block';
 });
 
 
-opcion1Button.addEventListener('click', function() {
+opcion1Button.addEventListener('click', function () {
     modal.style.display = 'none';
     handleAuthClick();
 });
 
-opcion2Button.addEventListener('click', function(event) {
+opcion2Button.addEventListener('click', function (event) {
     modal.style.display = 'none';
-    validar();
-    // Realizar acciones relacionadas con la Opción Nuevo Pedido
-    if (validarCampos() === true) {
-        resaltarCampos();
-        nuevoPedido();
-        guardarPdf();
-        event.preventDefault(); // Evitar la recarga de la página
+    if (!pedidos) {
+        //validar si inicio sesion
+        alert("¡Debes Registrarte!")
     } else {
-        alert("Debes llenar todos los campos requeridos")
-        resaltarCampos();
+        // Realizar acciones relacionadas con la Opción Nuevo Pedido
+        if (validarCampos() === true) {
+            resaltarCampos();
+            nuevoPedido();
+            guardarPdf();
+            event.preventDefault(); // Evitar la recarga de la página
+        } else {
+            alert("Debes llenar todos los campos requeridos")
+            resaltarCampos();
+        }
+    }
+
+});
+
+opcion3Button.addEventListener('click', function (event) {
+    if (!pedidos) {
+        //validar si inicio sesion
+        alert("¡Debes Registrarte!")
+    } else {
+        buscarPedido();
+        modal.style.display = 'none';
+        event.preventDefault(); // Evitar la recarga de la página
+        // Realizar acciones relacionadas con la Opción Buscar Pedido
     }
 });
 
-opcion3Button.addEventListener('click', function(event) {
-    buscarPedido();
-    validar();
-    modal.style.display = 'none';
-    event.preventDefault(); // Evitar la recarga de la página
-    // Realizar acciones relacionadas con la Opción Buscar Pedido
-});
-
 opcion4Button.addEventListener('click', function (event) {
-    modal.style.display = 'none';
-    editPedidos();
-    validar();
-    event.preventDefault(); // Evitar la recarga de la página
-    // Realizar acciones relacionadas con la Opción Actualizar Pedido
+    if (!pedidos) {
+        //validar si inicio sesion
+        alert("¡Debes Registrarte!")
+    } else {
+        modal.style.display = 'none';
+        editPedidos();
+        validar();
+        event.preventDefault(); // Evitar la recarga de la página
+        // Realizar acciones relacionadas con la Opción Actualizar Pedido
+    }
 });
 
 // Cerrar el modal al hacer clic fuera del contenido del modal
-window.addEventListener('click', function(event) {
+window.addEventListener('click', function (event) {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
 });
 
-window.onload = function() {
+window.onload = function () {
     modal.style.display = 'block'
 };
+
+// Agregar un controlador de eventos para el evento keydown en el documento
+document.addEventListener('keydown', function (event) {
+    // Verificar si se presiona la tecla Control (o Command en macOS) y la letra "P" (código de tecla 80)
+    if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+        // Anular la acción predeterminada (impresión)
+        event.preventDefault();
+        alert('La combinación de teclas Control + P está deshabilitada.');
+    }
+});
+
+//bloqueando la ejecucion del boton derecho
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
