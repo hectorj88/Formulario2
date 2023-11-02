@@ -1141,8 +1141,8 @@ li{
     
     #direccion{
         /*ajustes 74mm*/
-        min-width: 65mm;
-        max-width: 65mm;
+        min-width: 74mm;
+        max-width: 74mm;
         font-weight: bold;
         font-size: 2.2mm;
     }
@@ -1190,9 +1190,9 @@ li{
     }
     
     #dirEmpr{
-        min-width: 40mm;
+        min-width: 38mm;
         font-weight: bold;
-        max-width: 40mm;
+        max-width: 38mm;
     }
     
     .div56-2{
