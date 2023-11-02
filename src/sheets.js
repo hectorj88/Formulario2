@@ -111,7 +111,7 @@ async function editPedidos(){
     //buscamos el numero de pedido a editar
     const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
     
-    if (filaEditar >= 0) {
+    if ( pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value)) >= 0) {
         //si se encontro el numero de pedido realizamos la edicion
         //realizamos una copia del pedido anterior, para tener los registros de cambios
         let copiaAnterior = Object.values(pedidos[filaEditar-2]);
@@ -200,7 +200,7 @@ async function editPedidos(){
         getPedidos();
         guardarPdf();
     }else{
-        alert("No se ha podido realizar la actualización");
+        alert("No se ha podido realizar la actualización, pedido no encontrado");
     }
 }
 

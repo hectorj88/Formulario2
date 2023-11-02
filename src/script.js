@@ -92,6 +92,12 @@ var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
 
+function validar(){
+    if(!pedidos){
+        //validar si inicio sesion
+        alert("¡Debes Registrarte!")
+    }
+}
 
 function ejecFunc(){
     /*if(validarCampos()===true){
@@ -226,6 +232,7 @@ opcion1Button.addEventListener('click', function() {
 
 opcion2Button.addEventListener('click', function(event) {
     modal.style.display = 'none';
+    validar();
     // Realizar acciones relacionadas con la Opción Nuevo Pedido
     if (validarCampos() === true) {
         resaltarCampos();
@@ -240,6 +247,7 @@ opcion2Button.addEventListener('click', function(event) {
 
 opcion3Button.addEventListener('click', function(event) {
     buscarPedido();
+    validar();
     modal.style.display = 'none';
     event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Buscar Pedido
@@ -248,6 +256,7 @@ opcion3Button.addEventListener('click', function(event) {
 opcion4Button.addEventListener('click', function (event) {
     modal.style.display = 'none';
     editPedidos();
+    validar();
     event.preventDefault(); // Evitar la recarga de la página
     // Realizar acciones relacionadas con la Opción Actualizar Pedido
 });
