@@ -312,8 +312,15 @@ opcion3Button.addEventListener('click', function(event) {
 
 opcion4Button.addEventListener('click', function(event) {
     modal.style.display = 'none';
-    editPedidos();
-    event.preventDefault(); // Evitar la recarga de la página
+    if($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0){
+        editPedidos();
+        guardarPdf();
+        event.preventDefault(); // Evitar la recarga de la página
+    }else{
+        alert("Debes llenar todos los campos requeridos")
+        resaltarCampos();
+    }
+
     // Realizar acciones relacionadas con la Opción Actualizar Pedido
 });
 
@@ -354,13 +361,3 @@ function isMobileDevice() {
     return windowWidth < mobileThreshold;
 }
 
-// Llamar a la función para verificar si es un dispositivo móvil
-if (isMobileDevice()) {
-    // El usuario está en un dispositivo móvil, incluso si tiene activada la vista de escritorio
-    alert("El usuario está en un dispositivo móvil");
-    console.log("El usuario está en un dispositivo móvil");
-} else {
-    // El usuario está en una computadora o en una vista de escritorio
-    alert("El usuario está en un dispositivo móvil");
-    console.log("El usuario está en una computadora o en vista de escritorio");
-}

@@ -1140,8 +1140,8 @@ li{
     
     #direccion{
         /*ajustes 74mm*/
-        min-width: 70mm;
-        max-width: 70mm;
+        min-width: 65mm;
+        max-width: 65mm;
         font-weight: bold;
         font-size: 2.2mm;
     }
