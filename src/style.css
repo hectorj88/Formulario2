@@ -171,8 +171,8 @@ h1, #nitE{
 }
 
 #nombre, #apellido{
-    min-width: 80mm;
-    max-width: 80mm;
+    min-width: 82mm;
+    max-width: 82mm;
     font-weight: bold;
     font-size: 80%;
     text-align: center;
@@ -188,8 +188,8 @@ h1, #nitE{
 }
 
 #direccion{
-    min-width: 68mm;
-    max-width: 68mm;
+    min-width: 74mm;
+    max-width: 74mm;
     font-weight: bold;
     font-size: 2.2mm;
 }
@@ -223,8 +223,8 @@ h1, #nitE{
 }
 
 #barrio{
-    min-width: 40mm;
-    max-width: 40mm;
+    min-width: 43mm;
+    max-width: 43mm;
     font-weight: bold;
     font-size: 65%;
     font-size: 2.3mm;
@@ -246,8 +246,8 @@ h1, #nitE{
     border-right: 1px black solid;
 }
 #cargo{
-    min-width: 40mm;
-    max-width: 40mm;
+    min-width: 42mm;
+    max-width: 42mm;
     font-weight: bold;
 }
 
@@ -261,14 +261,14 @@ h1, #nitE{
 }
 
 #antiguedad{
-    min-width: 19mm;
-    max-width: 19mm;
+    min-width: 21mm;
+    max-width: 21mm;
     font-weight: bold;
 }
 
 #sueldo{
-    min-width: 23mm;
-    max-width: 23mm;
+    min-width: 26mm;
+    max-width: 26mm;
     font-weight: bold;
 }
 
@@ -298,15 +298,15 @@ h1, #nitE{
 }
 
 #email{
-    min-width: 79mm;
-    max-width: 79mm;
+    min-width: 84mm;
+    max-width: 84mm;
     font-weight: bold;
     font-size: 80%;
 }
 
 #fCobro{
-    min-width: 30mm;
-    max-width: 30mm;
+    min-width: 33mm;
+    max-width: 33mm;
 }
 
 .ninoCiudad{
@@ -377,24 +377,25 @@ h1, #nitE{
 }
 
 #nombCo, #apellCo{
-    min-width: 45mm;
-    max-width: 45mm;
+    min-width: 53mm;
+    max-width: 53mm;
+    text-align: center;
 }
 
 #empCo{
-    min-width: 78mm;
-    max-width: 78mm;
+    min-width: 82mm;
+    max-width: 82mm;
 }
 
 #telCo{
-    min-width: 24mm;
-    max-width: 24mm;
+    min-width: 25mm;
+    max-width: 25mm;
     font-size: 65%;
 }
 
 #direCo{
-    min-width: 38mm;
-    max-width: 38mm;
+    min-width: 40mm;
+    max-width: 40mm;
 }
 
 .carAntSuel, .carAntSuel2{
@@ -412,18 +413,18 @@ h1, #nitE{
 }
 
 #cargoCo{
-    min-width: 38mm;
-    max-width: 38mm;
+    min-width: 43mm;
+    max-width: 43mm;
 }
 
 #antiCo{
-    min-width: 20mm;
-    max-width: 20mm;
+    min-width: 23mm;
+    max-width: 23mm;
 }
 
 #suelCo{
-    min-width: 25mm;
-    max-width: 25mm;
+    min-width: 28mm;
+    max-width: 28mm;
 }
 
 #autosi, #autono{
@@ -498,16 +499,16 @@ h1, #nitE{
 }
 
 #ptco1, #ptco2, #ptco3, #ptco4{
-    min-width: 15mm;
-    max-width: 15mm;
+    min-width: 21mm;
+    max-width: 21mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
     font-size: 2.5mm;
 }
 
 #telOR1, #telRR1, #telOR2, #telRR2, #telOR3, #telRR3, #telOR4, #telRR4{
-    min-width: 25mm;
-    max-width: 25mm;
+    min-width: 27mm;
+    max-width: 27mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
 }
@@ -617,8 +618,8 @@ h1, #nitE{
 }
 
 #nCoutas, #vrCuota{
-    min-width: 20mm;
-    max-width: 20mm;
+    min-width: 24mm;
+    max-width: 24mm;
     min-height: 6mm;
     max-height: 6mm;
 }
@@ -671,8 +672,8 @@ h1, #nitE{
 }
 
 #telCliente{
-    min-width: 56mm;
-    max-width: 56mm;
+    min-width: 65mm;
+    max-width: 65mm;
     min-height: 6mm;
     max-height: 6mm; 
 }
