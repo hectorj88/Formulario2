@@ -418,8 +418,8 @@ h1, #nitE{
 }
 
 #antiCo{
-    min-width: 23mm;
-    max-width: 23mm;
+    min-width: 20mm;
+    max-width: 20mm;
 }
 
 #suelCo{
@@ -499,8 +499,8 @@ h1, #nitE{
 }
 
 #ptco1, #ptco2, #ptco3, #ptco4{
-    min-width: 21mm;
-    max-width: 21mm;
+    min-width: 15mm;
+    max-width: 15mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
     font-size: 2.5mm;
