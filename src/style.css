@@ -990,7 +990,7 @@ li{
     }
 }
 
-
+/*
 @media (max-width: 768px){
     input{
         border: none;
@@ -1140,7 +1140,6 @@ li{
     }
     
     #direccion{
-        /*ajustes 74mm*/
         min-width: 74mm;
         max-width: 74mm;
         font-weight: bold;
@@ -1241,7 +1240,6 @@ li{
         max-width: 195mm;
         min-height: 7mm;
         max-height: 7mm;
-        /*border-top: 1px solid;*/
     }
     
     #email{
@@ -1351,7 +1349,6 @@ li{
         max-width: 195mm;
         min-height: 7mm;
         max-height: 7mm;
-        /*border-top: 1px solid;*/
     }
     
     .carAntSuel{
@@ -1628,15 +1625,7 @@ li{
         max-width: 67mm;
         min-height: 6mm;
         max-height: 6mm;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    }    
     
     .de105{
         display: inline-block;
@@ -1836,4 +1825,4 @@ li{
         font-weight: bold;
     }
     
-}
+}*/
