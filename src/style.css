@@ -507,8 +507,8 @@ h1, #nitE{
 }
 
 #telOR1, #telRR1, #telOR2, #telRR2, #telOR3, #telRR3, #telOR4, #telRR4{
-    min-width: 27mm;
-    max-width: 27mm;
+    min-width: 25mm;
+    max-width: 25mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
 }

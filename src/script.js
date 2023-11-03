@@ -213,14 +213,16 @@ $imgpago.addEventListener('change', () => {
 
 
 // Mostrar el modal al hacer clic en el botón "Guardar"
-$botonGuardar.addEventListener('click', function () {
+$botonGuardar.addEventListener('click', function (event) {
     modal.style.display = 'block';
+    event.preventDefault(); // Evitar la recarga de la página
 });
 
 //Autenticacion
-opcion1Button.addEventListener('click', function () {
+opcion1Button.addEventListener('click', function (event) {
     modal.style.display = 'none';
     handleAuthClick();
+    event.preventDefault(); // Evitar la recarga de la página
 });
 
 //Nuevo Pedido
