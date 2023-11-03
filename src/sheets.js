@@ -364,7 +364,7 @@ async function nuevoPedido(){
 
         response = await gapi.client.sheets.spreadsheets.values.update({
             spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: `pedidos!A${filaNueva}:BH${filaNueva}`,
+            range: `pedidos!A${filaNueva}:BJ${filaNueva}`,
             values: [update],
             valueInputOption: "USER_ENTERED"
         });
