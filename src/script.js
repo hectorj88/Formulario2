@@ -1,4 +1,4 @@
-var $botonGuardar = document.querySelector("#guardar");
+var $botonGuardar = document.getElementById("guardar");
 var modal = document.getElementById('myModal');
 var opcion1Button = document.getElementById('opcion1');
 var opcion2Button = document.getElementById('opcion2');
