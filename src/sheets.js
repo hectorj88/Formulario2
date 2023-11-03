@@ -197,6 +197,7 @@ async function editPedidos(){
             valueInputOption: "USER_ENTERED"
         });
         //actualizamos los datos registrados
+        resaltarCampos();
         getPedidos();
         guardarPdf();
     }else{
