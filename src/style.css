@@ -305,8 +305,8 @@ h1, #nitE{
 }
 
 #fCobro{
-    min-width: 33mm;
-    max-width: 33mm;
+    min-width: 30mm;
+    max-width: 30mm;
 }
 
 .ninoCiudad{
@@ -377,14 +377,14 @@ h1, #nitE{
 }
 
 #nombCo, #apellCo{
-    min-width: 53mm;
-    max-width: 53mm;
+    min-width: 45mm;
+    max-width: 45mm;
     text-align: center;
 }
 
 #empCo{
-    min-width: 82mm;
-    max-width: 82mm;
+    min-width: 78mm;
+    max-width: 78mm;
 }
 
 #telCo{
@@ -394,8 +394,8 @@ h1, #nitE{
 }
 
 #direCo{
-    min-width: 40mm;
-    max-width: 40mm;
+    min-width: 38mm;
+    max-width: 38mm;
 }
 
 .carAntSuel, .carAntSuel2{
@@ -618,8 +618,8 @@ h1, #nitE{
 }
 
 #nCoutas, #vrCuota{
-    min-width: 24mm;
-    max-width: 24mm;
+    min-width: 20mm;
+    max-width: 20mm;
     min-height: 6mm;
     max-height: 6mm;
 }
