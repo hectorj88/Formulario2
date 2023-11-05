@@ -35,7 +35,6 @@ async function getPedidos() {
     filaPedido = copia.values.length + 1;
 
     pedidos = [];
-    console.log(range.values) /*borrar despues de pruebas*/
     range.values.forEach((fila) => {
         //guardamos los datos de los pedidos en el sheet en un objeto
         if (isNaN(parseInt(fila[0]))) return;
@@ -213,7 +212,6 @@ async function buscarPedido() {
     if (Encontrado >= 0) {
         //si encontramos el pedido, llevamos los datos al formulario
         const pedidoEncontrado = pedidos[Encontrado];
-        console.log("Datos del pedido encontrado:", pedidoEncontrado);
 
         $pedido.value = parseInt(pedidoEncontrado.pedido);
         $fecha.value = pedidoEncontrado.fecha;
