@@ -232,6 +232,8 @@ opcion2Button.addEventListener('click', function (event) {
     if (!pedidos) {
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
+        handleAuthClick();
+        event.preventDefault(); // Evitar la recarga de la página
     } else {
         // Realizar acciones relacionadas con la Opción Nuevo Pedido
         modal.style.display = 'none';
@@ -253,6 +255,8 @@ opcion3Button.addEventListener('click', function (event) {
     if (!pedidos) {
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
+        handleAuthClick();
+        event.preventDefault(); // Evitar la recarga de la página
     } else {
         buscarPedido();
         modal.style.display = 'none';
@@ -266,6 +270,8 @@ opcion4Button.addEventListener('click', function (event) {
     if (!pedidos) {
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
+        handleAuthClick();
+        event.preventDefault(); // Evitar la recarga de la página
     } else {
         modal.style.display = 'none';
         editPedidos();
@@ -292,7 +298,7 @@ document.addEventListener('keydown', function (event) {
     if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
         // Anular la acción predeterminada (impresión)
         event.preventDefault();
-        alert('La combinación de teclas Control + P está deshabilitada.');
+        console.log('La combinación de teclas Control + P está deshabilitada.');
     }
 });
 
