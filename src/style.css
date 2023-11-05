@@ -6,7 +6,7 @@ html, body{
     max-height: 330mm;*/
     min-height: 1400mm;
     max-height: 1400mm;
-    margin: 2mm 0 0 0;
+    margin: 1mm 0 0 0;
     padding: 0;
 }
 
@@ -40,6 +40,7 @@ input{
     resize: none;
     overflow: hidden;
     font-size: 70%;
+    border: 1px red solid;
 }
 
 textarea{
@@ -335,8 +336,8 @@ h1, #nitE{
 }
 
 #nino{
-    min-width: 105mm;
-    max-width: 105mm;
+    min-width: 111mm;
+    max-width: 111mm;
     font-weight: bold;
     font-size: 65%;
 }
@@ -379,8 +380,8 @@ h1, #nitE{
 }
 
 #nombCo, #apellCo{
-    min-width: 45mm;
-    max-width: 45mm;
+    min-width: 52mm;
+    max-width: 52mm;
     text-align: center;
 }
 
@@ -501,8 +502,8 @@ h1, #nitE{
 }
 
 #ptco1, #ptco2, #ptco3, #ptco4{
-    min-width: 15mm;
-    max-width: 15mm;
+    min-width: 20mm;
+    max-width: 20mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
     font-size: 2.5mm;
@@ -620,8 +621,8 @@ h1, #nitE{
 }
 
 #nCoutas, #vrCuota{
-    min-width: 20mm;
-    max-width: 20mm;
+    min-width: 22mm;
+    max-width: 22mm;
     min-height: 6mm;
     max-height: 6mm;
 }
@@ -667,8 +668,8 @@ h1, #nitE{
 }
 
 #tomaCont{
-    min-width: 50mm;
-    max-width: 50mm;
+    min-width: 54mm;
+    max-width: 54mm;
     min-height: 6mm;
     max-height: 6mm;
 }
@@ -996,27 +997,36 @@ li{
     /* Ajustar el tamaño de la página a oficio */
     @page {
         size: legal; /* Tamaño de página oficio */
-        margin: 3cm 2cm 2cm 2cm;
+        margin: 0;
     }
 }
 
-/*Intentando ocultar el boton guardar al momento de precionarlo
-desde el dispositivo movil*/
 @media (max-width: 768px){
-    @keyframes hideButton {
-    
-            0%, 99% {
-                opacity: 1;
-            }
-    
-            100% {
-                opacity: 0;
-            }
-        }
-    
-        #guardar {
-            animation: hideButton 3s forwards;
-        }
+
+    #nino{
+        min-width: 105mm;
+        max-width: 105mm;
+    }
+
+    #nombCo, #apellCo{
+        min-width: 45mm;
+        max-width: 45mm;
+    }
+
+    #ptco1, #ptco2, #ptco3, #ptco4{
+        min-width: 15mm;
+        max-width: 15mm;
+    }
+
+    #nCoutas, #vrCuota{
+        min-width: 20mm;
+        max-width: 20mm;
+    }
+
+    #tomaCont{
+        min-width: 50mm;
+        max-width: 50mm;
+    }
 }
 
 /*
