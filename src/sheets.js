@@ -3,7 +3,7 @@ let pedidos;
 let filaPedido;
 let cargado;
 
-async function getPedidos(){
+async function getPedidos() {
     let response;
     let response2;
     try {
@@ -39,7 +39,7 @@ async function getPedidos(){
     range.values.forEach((fila) => {
         //guardamos los datos de los pedidos en el sheet en un objeto
         if (isNaN(parseInt(fila[0]))) return;
-        const nuevoPedido ={
+        const nuevoPedido = {
             pedido: fila[0],
             fecha: fila[1],
             cuenta: fila[2],
@@ -108,14 +108,14 @@ async function getPedidos(){
 
 }
 
-async function editPedidos(){
+async function editPedidos() {
     //buscamos el numero de pedido a editar
-    const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value))+2;
-    
-    if ( pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value)) >= 0) {
+    const filaEditar = pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value)) + 2;
+
+    if (pedidos.findIndex(pedidos => parseInt(pedidos.pedido) === parseInt($pedido.value)) >= 0) {
         //si se encontro el numero de pedido realizamos la edicion
         //realizamos una copia del pedido anterior, para tener los registros de cambios
-        let copiaAnterior = Object.values(pedidos[filaEditar-2]);
+        let copiaAnterior = Object.values(pedidos[filaEditar - 2]);
         //creamos el vector con los datos a actualizar
         const update = [
             $pedido.value,
@@ -143,7 +143,7 @@ async function editPedidos(){
             $cDir.value,
             $cCargo.value,
             $cAntig.value,
-            $cSueldo.value,            
+            $cSueldo.value,
             $rNomb1.value,
             $rp1.value,
             $rTele1.value,
@@ -201,7 +201,7 @@ async function editPedidos(){
         resaltarCampos();
         getPedidos();
         guardarPdf();
-    }else{
+    } else {
         alert("No se ha podido realizar la actualización, pedido no encontrado");
     }
 }
@@ -268,8 +268,8 @@ async function buscarPedido() {
         $organizador.value = pedidoEncontrado.organizador;
         $cedula2.value = pedidoEncontrado.cedula2;
         $cc2.value = pedidoEncontrado.cc2;
-        $ce2.value = pedidoEncontrado.ce2;        
-        $cedula3.value = pedidoEncontrado.cedula3;  
+        $ce2.value = pedidoEncontrado.ce2;
+        $cedula3.value = pedidoEncontrado.cedula3;
         $cedula4.value = pedidoEncontrado.cedula4;
         $detColec.value = pedidoEncontrado.detColec;
         $detValor.value = pedidoEncontrado.detValor;
@@ -287,18 +287,20 @@ async function buscarPedido() {
     }
 }
 
-async function nuevoPedido(){
+async function nuevoPedido() {
 
     if (!cargado) {
-        //obteniendo el valor de la fila nueva para agregar la informacion del pedido
-        const filaNueva = pedidos.length + 2;
-        //obteniendo el nuevo numero de pedido a agregar al formulario
-        let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
-        //asignado el nuevo valor al input del formulario
-        $pedido.value = pedidoNuevo;
 
-        //guardando la informacion en el sheet
         if (filaNueva >= 0) {
+            //obteniendo el valor de la fila nueva para agregar la informacion del pedido
+            const filaNueva = pedidos.length + 2;
+            //obteniendo el nuevo numero de pedido a agregar al formulario
+            let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
+            //asignado el nuevo valor al input del formulario
+            $pedido.value = pedidoNuevo;
+
+            //guardando la informacion en el sheet
+
             //obteniendo los datos del formulario
             const update = [
                 pedidoNuevo,
@@ -375,7 +377,7 @@ async function nuevoPedido(){
             getPedidos();
             cargado = 1;
         }
-    }else{
+    } else {
         editPedidos();
     }
 
