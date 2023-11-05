@@ -1,6 +1,7 @@
 //Variables accesibles desde cualquier parte
 let pedidos;
 let filaPedido;
+let cargado;
 
 async function getPedidos(){
     let response;
@@ -287,88 +288,96 @@ async function buscarPedido() {
 }
 
 async function nuevoPedido(){
-    //obteniendo el valor de la fila nueva para agregar la informacion del pedido
-    const filaNueva = pedidos.length +2 ;
-    //obteniendo el nuevo numero de pedido a agregar al formulario
-    let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido)+1);
-    //asignado el nuevo valor al input del formulario
-    $pedido.value = pedidoNuevo;
 
-    //guardando la informacion en el sheet
-    if (filaNueva >= 0) {
-        //obteniendo los datos del formulario
-        const update = [
-            pedidoNuevo,
-            $fecha.value,
-            $cuenta.value,
-            $nombre1.value,
-            $apellido.value,
-            $direccion.value,
-            $telefono.value,
-            $barrio.value,
-            $empresa.value,
-            $telefono2.value,
-            $direccion2.value,
-            $cargo.value,
-            $antiguo.value,
-            $sueldo.value,
-            $email.value,
-            $fCobro.value,
-            $nNino.value,
-            $ciudad.value,
-            $cNomb.value,
-            $cApell.value,
-            $cEmpresa.value,
-            $ctele.value,
-            $cDir.value,
-            $cCargo.value,
-            $cAntig.value,
-            $cSueldo.value,
-            $rNomb1.value,
-            $rp1.value,
-            $rTele1.value,
-            $rTeleres1.value,
-            $rNomb2.value,
-            $rp2.value,
-            $rTele2.value,
-            $rTeleres2.value,
-            $rNomb3.value,
-            $rp3.value,
-            $rTele3.value,
-            $rTeleres3.value,
-            $rNomb4.value,
-            $rp4.value,
-            $rTele4.value,
-            $rTeleres4.value,
-            $oCuotas.value,
-            $oValor.value,
-            $cedula1.value,
-            $cc1.value,
-            $ce1.value,
-            $relacionista.value,
-            $colaborador.value,
-            $director.value,
-            $organizador.value,
-            $cedula2.value,
-            $cc2.value,
-            $ce2.value,
-            $cedula3.value,
-            $cedula4.value,
-            $detColec.value,
-            $detValor.value,
-            $totalVal.value,
-            $nCoutas.value,
-            $vrCuota.value,
-            $observ.value
-        ];
+    if (!cargado) {
+        //obteniendo el valor de la fila nueva para agregar la informacion del pedido
+        const filaNueva = pedidos.length + 2;
+        //obteniendo el nuevo numero de pedido a agregar al formulario
+        let pedidoNuevo = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
+        //asignado el nuevo valor al input del formulario
+        $pedido.value = pedidoNuevo;
 
-        response = await gapi.client.sheets.spreadsheets.values.update({
-            spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
-            range: `pedidos!A${filaNueva}:BJ${filaNueva}`,
-            values: [update],
-            valueInputOption: "USER_ENTERED"
-        });
-        //actualizando registros
-        getPedidos();
+        //guardando la informacion en el sheet
+        if (filaNueva >= 0) {
+            //obteniendo los datos del formulario
+            const update = [
+                pedidoNuevo,
+                $fecha.value,
+                $cuenta.value,
+                $nombre1.value,
+                $apellido.value,
+                $direccion.value,
+                $telefono.value,
+                $barrio.value,
+                $empresa.value,
+                $telefono2.value,
+                $direccion2.value,
+                $cargo.value,
+                $antiguo.value,
+                $sueldo.value,
+                $email.value,
+                $fCobro.value,
+                $nNino.value,
+                $ciudad.value,
+                $cNomb.value,
+                $cApell.value,
+                $cEmpresa.value,
+                $ctele.value,
+                $cDir.value,
+                $cCargo.value,
+                $cAntig.value,
+                $cSueldo.value,
+                $rNomb1.value,
+                $rp1.value,
+                $rTele1.value,
+                $rTeleres1.value,
+                $rNomb2.value,
+                $rp2.value,
+                $rTele2.value,
+                $rTeleres2.value,
+                $rNomb3.value,
+                $rp3.value,
+                $rTele3.value,
+                $rTeleres3.value,
+                $rNomb4.value,
+                $rp4.value,
+                $rTele4.value,
+                $rTeleres4.value,
+                $oCuotas.value,
+                $oValor.value,
+                $cedula1.value,
+                $cc1.value,
+                $ce1.value,
+                $relacionista.value,
+                $colaborador.value,
+                $director.value,
+                $organizador.value,
+                $cedula2.value,
+                $cc2.value,
+                $ce2.value,
+                $cedula3.value,
+                $cedula4.value,
+                $detColec.value,
+                $detValor.value,
+                $totalVal.value,
+                $nCoutas.value,
+                $vrCuota.value,
+                $observ.value
+            ];
+
+            response = await gapi.client.sheets.spreadsheets.values.update({
+                spreadsheetId: '1zjjoOVeIl11Ytg5grWpP_Z4BxlEbjMJYwjNpLebGbSg',
+                range: `pedidos!A${filaNueva}:BJ${filaNueva}`,
+                values: [update],
+                valueInputOption: "USER_ENTERED"
+            });
+            //actualizando registros
+            getPedidos();
+            cargado = 1;
+        }
+    }else{
+        editPedidos();
     }
+
+
 }

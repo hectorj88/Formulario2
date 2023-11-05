@@ -223,6 +223,9 @@ $botonGuardar.addEventListener('click', function () {
 opcion1Button.addEventListener('click', function () {
     modal.style.display = 'none';
     handleAuthClick();
+    if (pedidos !== undefined) {
+        opcion1Button.style.display = "none";
+    }
 });
 
 //Nuevo Pedido
