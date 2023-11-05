@@ -6,6 +6,8 @@ html, body{
     max-height: 330mm;*/
     min-height: 1400mm;
     max-height: 1400mm;
+    margin: 2mm 0 0 0;
+    padding: 0;
 }
 
 * {
@@ -994,7 +996,27 @@ li{
     /* Ajustar el tamaño de la página a oficio */
     @page {
         size: legal; /* Tamaño de página oficio */
+        margin: 3cm 2cm 2cm 2cm;
     }
+}
+
+/*Intentando ocultar el boton guardar al momento de precionarlo
+desde el dispositivo movil*/
+@media (max-width: 768px){
+    @keyframes hideButton {
+    
+            0%, 99% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+            }
+        }
+    
+        #guardar {
+            animation: hideButton 3s forwards;
+        }
 }
 
 /*
