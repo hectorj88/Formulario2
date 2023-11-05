@@ -40,7 +40,7 @@ input{
     resize: none;
     overflow: hidden;
     font-size: 70%;
-    border: 1px blue solid;
+    border: 1px red solid;
 }
 
 textarea{
@@ -191,8 +191,8 @@ h1, #nitE{
 }
 
 #direccion{
-    min-width: 74mm;
-    max-width: 74mm;
+    min-width: 73mm;
+    max-width: 73mm;
     font-weight: bold;
     font-size: 2.2mm;
 }
@@ -380,8 +380,8 @@ h1, #nitE{
 }
 
 #nombCo, #apellCo{
-    min-width: 49mm;
-    max-width: 49mm;
+    min-width: 48mm;
+    max-width: 48mm;
     text-align: center;
 }
 
@@ -502,8 +502,8 @@ h1, #nitE{
 }
 
 #ptco1, #ptco2, #ptco3, #ptco4{
-    min-width: 19mm;
-    max-width: 19mm;
+    min-width: 18mm;
+    max-width: 18mm;
     min-height: 4.5mm;
     max-height: 4.5mm;
     font-size: 2.5mm;
