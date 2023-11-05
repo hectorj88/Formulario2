@@ -40,7 +40,6 @@ input{
     resize: none;
     overflow: hidden;
     font-size: 70%;
-    border: 1px blue solid;
 }
 
 textarea{

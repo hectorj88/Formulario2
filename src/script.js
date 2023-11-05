@@ -108,7 +108,6 @@ async function guardarPdf() {
     $botonGuardar.style.background = "#CFE6F9";
     $botonGuardar.style.color = "#CFE6F9";
     $botonGuardar.style.visibility = "hidden";
-    $botonGuardar.style.display = "none";
     $imgcedula1.style.visibility = "hidden";
     $imgcedula2.style.visibility = "hidden";
     $imgpago.style.visibility = "hidden";
@@ -118,7 +117,6 @@ async function guardarPdf() {
     $botonGuardar.style.background = "gray";
     $botonGuardar.style.color = "white";
     $botonGuardar.style.visibility = "visible";
-    $botonGuardar.style.display = "inline-flex";
     $imgcedula1.style.visibility = "visible";
     $imgcedula2.style.visibility = "visible";
     $imgpago.style.visibility = "visible";
