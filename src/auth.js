@@ -46,6 +46,7 @@ async function initializeGapiClient() {
         discoveryDocs: [DISCOVERY_DOC],
     });
     gapiInited = true;
+    gapiLoaded();
     //maybeEnableButtons();
 }
 

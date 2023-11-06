@@ -1,3 +1,5 @@
+import { carpeta1 } from "./drive";
+
 var $botonGuardar = document.querySelector("#guardar");
 var modal = document.getElementById('myModal');
 var opcion1Button = document.getElementById('opcion1');
@@ -91,6 +93,9 @@ var $observ = document.getElementById('observ');
 var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
+const visual1 = document.getElementById("visual1");
+const visual2 = document.getElementById("visual2");
+const pago1 = document.getElementById("pago1");
 
 function ejecFunc() {
     /*if(validarCampos()===true){
@@ -240,7 +245,8 @@ opcion2Button.addEventListener('click', function (event) {
         if (validarCampos() === true) {
             resaltarCampos();
             nuevoPedido();
-            guardarPdf();            
+            guardarPdf();
+            guardarImagen(carpeta1,$pedido.value,visual1);
             event.preventDefault(); // Evitar la recarga de la página
         } else {
             alert("Debes llenar todos los campos requeridos")
