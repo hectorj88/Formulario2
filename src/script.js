@@ -1,5 +1,3 @@
-import { carpeta1 } from "./drive";
-
 var $botonGuardar = document.querySelector("#guardar");
 var modal = document.getElementById('myModal');
 var opcion1Button = document.getElementById('opcion1');
