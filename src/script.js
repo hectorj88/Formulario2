@@ -1,5 +1,3 @@
-//import { guardarImagen, encontrarImagen, sobrescribirImagen, carpeta1, carpeta2, carpeta3 } from './drive'; // Asegúrate de que la ruta al archivo sea correcta
-
 var $botonGuardar = document.querySelector("#guardar");
 var modal = document.getElementById('myModal');
 var opcion1Button = document.getElementById('opcion1');
@@ -93,9 +91,6 @@ var $observ = document.getElementById('observ');
 var $imgcedula1 = document.querySelector("#imgfile");
 var $imgcedula2 = document.querySelector("#imgfile2");
 var $imgpago = document.querySelector("#pagofile");
-const visual1 = document.getElementById("visual1");
-const visual2 = document.getElementById("visual2");
-const pago1 = document.getElementById("pago1");
 
 function ejecFunc() {
     /*if(validarCampos()===true){
@@ -246,8 +241,7 @@ opcion2Button.addEventListener('click', function (event) {
             event.preventDefault(); // Evitar la recarga de la página
             resaltarCampos();
             nuevoPedido();
-            guardarPdf();
-            guardarImagen(carpeta1, $pedido.value, visual1);       
+            guardarPdf();     
         } else {
             alert("Debes llenar todos los campos requeridos")
             resaltarCampos();
@@ -259,14 +253,14 @@ opcion2Button.addEventListener('click', function (event) {
 //Buscar Pedido
 opcion3Button.addEventListener('click', function (event) {
     if (!pedidos) {
+        event.preventDefault(); // Evitar la recarga de la página
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
         handleAuthClick();
-        event.preventDefault(); // Evitar la recarga de la página
     } else {
+        event.preventDefault(); // Evitar la recarga de la página
         buscarPedido();
         modal.style.display = 'none';
-        event.preventDefault(); // Evitar la recarga de la página
         // Realizar acciones relacionadas con la Opción Buscar Pedido
     }
 });
@@ -274,14 +268,14 @@ opcion3Button.addEventListener('click', function (event) {
 //Actualizar Pedido
 opcion4Button.addEventListener('click', function (event) {
     if (!pedidos) {
+        event.preventDefault(); // Evitar la recarga de la página
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
         handleAuthClick();
-        event.preventDefault(); // Evitar la recarga de la página
     } else {
+        event.preventDefault(); // Evitar la recarga de la página
         modal.style.display = 'none';
         editPedidos();
-        event.preventDefault(); // Evitar la recarga de la página
         // Realizar acciones relacionadas con la Opción Actualizar Pedido
     }
 });

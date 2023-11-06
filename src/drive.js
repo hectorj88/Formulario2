@@ -1,7 +1,7 @@
 // Importa la biblioteca de la API de Google Drive y OAuth 2.0
-let carpeta1 = "1W2PiVAGthjPB7nfFCNp4Zw7NlDUEPQfq";
-let carpeta2 = "10GqUCrWPf9WiWW-RpF8BtUo9_WT7yyic";
-let carpeta3 = "13SHy374gcFaam_YZzj8eHcE1HLbnfDBn";
+let carpeta1;
+let carpeta2;
+let carpeta3;
 //import { gapi } from 'gapi-client';  // Importa las bibliotecas necesarias. Asegúrate de que estos nombres de módulos coincidan con tu entorno.
 
 //import { handleAuthClick } from './auth'; // Asegúrate de importar la función de autenticación desde tu archivo auth.js
