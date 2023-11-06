@@ -241,11 +241,11 @@ opcion2Button.addEventListener('click', function (event) {
         // Realizar acciones relacionadas con la Opción Nuevo Pedido
         modal.style.display = 'none';
         if (validarCampos() === true) {
+            event.preventDefault(); // Evitar la recarga de la página
             resaltarCampos();
             nuevoPedido();
-            guardarPdf();
-            guardarImagen(carpeta1,$pedido.value,visual1);
-            event.preventDefault(); // Evitar la recarga de la página
+            guardarPdf();            
+            guardarImagen(carpeta1, $pedido.value, visual1);            
         } else {
             alert("Debes llenar todos los campos requeridos")
             resaltarCampos();
