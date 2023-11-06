@@ -2,9 +2,9 @@
 let carpeta1 = "1W2PiVAGthjPB7nfFCNp4Zw7NlDUEPQfq";
 let carpeta2 = "10GqUCrWPf9WiWW-RpF8BtUo9_WT7yyic";
 let carpeta3 = "13SHy374gcFaam_YZzj8eHcE1HLbnfDBn";
-import { gapi } from 'gapi-client';  // Importa las bibliotecas necesarias. Asegúrate de que estos nombres de módulos coincidan con tu entorno.
+//import { gapi } from 'gapi-client';  // Importa las bibliotecas necesarias. Asegúrate de que estos nombres de módulos coincidan con tu entorno.
 
-import { handleAuthClick } from './auth'; // Asegúrate de importar la función de autenticación desde tu archivo auth.js
+//import { handleAuthClick } from './auth'; // Asegúrate de importar la función de autenticación desde tu archivo auth.js
 
 // Función para guardar un archivo en Google Drive en una carpeta específica
 async function guardarImagen(carpetaId, nombreImagen, contenidoImagen) {
@@ -96,4 +96,4 @@ async function sobrescribirImagen(imagenId, nuevaImagen) {
 }
 
 // Exporta las funciones para su uso en otros módulos
-export { guardarImagen, encontrarImagen, sobrescribirImagen, carpeta1, carpeta2, carpeta3 };
+//export { guardarImagen, encontrarImagen, sobrescribirImagen, carpeta1, carpeta2, carpeta3 };

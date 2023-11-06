@@ -1,3 +1,5 @@
+//import { guardarImagen, encontrarImagen, sobrescribirImagen, carpeta1, carpeta2, carpeta3 } from './drive'; // Asegúrate de que la ruta al archivo sea correcta
+
 var $botonGuardar = document.querySelector("#guardar");
 var modal = document.getElementById('myModal');
 var opcion1Button = document.getElementById('opcion1');
@@ -244,8 +246,8 @@ opcion2Button.addEventListener('click', function (event) {
             event.preventDefault(); // Evitar la recarga de la página
             resaltarCampos();
             nuevoPedido();
-            guardarPdf();            
-            guardarImagen(carpeta1, $pedido.value, visual1);            
+            guardarPdf();
+            guardarImagen(carpeta1, $pedido.value, visual1);       
         } else {
             alert("Debes llenar todos los campos requeridos")
             resaltarCampos();
