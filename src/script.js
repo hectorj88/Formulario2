@@ -123,7 +123,9 @@ async function guardarPdf() {
 }
 
 function validarCampos() {
-    if ($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0) {
+    if ($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 
+        || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 
+        || $colaborador.value.length === 0 || $fecha.value.length === 0 || $fCobro.value.length === 0) {
         return false;
     } else {
         //$pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
@@ -137,6 +139,18 @@ async function resaltarCampos() {
     }else{
         $pedido.style.background = "transparent";
     }*/
+
+    if ($fecha.value.length === 0) {
+        $fecha.style.background = "rgb(255, 209, 209)";
+    } else {
+        $fecha.style.background = "transparent";
+    }
+
+    if ($fCobro.value.length === 0) {
+        $fCobro.style.background = "rgb(255, 209, 209)";
+    } else {
+        $fCobro.style.background = "transparent";
+    }
 
     if ($nombre1.value.length === 0) {
         $nombre1.style.background = "rgb(255, 209, 209)";
