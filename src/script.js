@@ -287,11 +287,14 @@ opcion4Button.addEventListener('click', function (event) {
         //validar si inicio sesion
         alert("¡Debes Registrarte!")
         handleAuthClick();
-    } else {
+    } else if(validarCampos() === true) {
         event.preventDefault(); // Evitar la recarga de la página
         modal.style.display = 'none';
-        editPedidos();
-        // Realizar acciones relacionadas con la Opción Actualizar Pedido
+        editPedidos();        
+    } else {
+        event.preventDefault(); // Evitar la recarga de la página
+        alert("Debes llenar todos los campos requeridos")
+        resaltarCampos();
     }
 });
 
