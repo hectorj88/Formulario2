@@ -287,9 +287,9 @@ async function buscarPedido() {
 
 async function nuevoPedido() {
 
-    if (!cargado) {
+    if (!cargado || cargado !== 1 ) {
 
-        if (pedidos.length >= 0) {
+        if (pedidos.length >= 0 || !cargado) {
             //obteniendo el valor de la fila nueva para agregar la informacion del pedido
             const filaNueva = pedidos.length + 2;
             //obteniendo el nuevo numero de pedido a agregar al formulario
