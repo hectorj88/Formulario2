@@ -245,9 +245,9 @@ opcion2Button.addEventListener('click', function (event) {
     
     if (!pedidos) {
         //validar si inicio sesion
-        alert("¡Debes Registrarte!")
-        handleAuthClick();
         event.preventDefault(); // Evitar la recarga de la página
+        alert("¡Debes Registrarte!")
+        handleAuthClick();        
     } else {
         // Realizar acciones relacionadas con la Opción Nuevo Pedido
         modal.style.display = 'none';
@@ -257,6 +257,7 @@ opcion2Button.addEventListener('click', function (event) {
             nuevoPedido();
             guardarPdf();     
         } else {
+            event.preventDefault(); // Evitar la recarga de la página
             alert("Debes llenar todos los campos requeridos")
             resaltarCampos();
         }
