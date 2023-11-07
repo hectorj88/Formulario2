@@ -126,7 +126,7 @@ function validarCampos() {
     if ($nombre1.value.length === 0 || $apellido.value.length === 0 || $direccion.value.length === 0 || $telefono.value.length === 0 || $email.value.length === 0 || $ciudad.value.length === 0 || $cedula1.value.length === 0 || $relacionista.value.length === 0 || $colaborador.value.length === 0) {
         return false;
     } else {
-        $pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
+        //$pedido.value = (parseInt(pedidos[pedidos.length - 1].pedido) + 1);
         return true;
     }
 }
