@@ -17,8 +17,8 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById("gapi").addEventListener("load",gapiLoaded);
-document.getElementById("gis").addEventListener("load",gisLoaded);
+document.getElementById("gapi").addEventListener("load",gapiLoaded());
+document.getElementById("gis").addEventListener("load",gisLoaded());
 
 
 let isUserAuthenticated = false; // Variable para rastrear el estado de autenticación
