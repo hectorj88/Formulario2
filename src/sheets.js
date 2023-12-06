@@ -119,74 +119,79 @@ async function getPedidos() {
     });
 
     try{
-        pedidosSeb=[];
-        //guardamos los datos de los pedidos en el sheet en un objeto
-        if (isNaN(parseInt(fila[0]))) return;
-        const nuevoPedidoSeb = {
-            pedido: fila[0],
-            fecha: fila[1],
-            cuenta: fila[2],
-            nombre1: fila[3],
-            apellido: fila[4],
-            direccion: fila[5],
-            telefono: fila[6],
-            barrio: fila[7],
-            empresa: fila[8],
-            telefono2: fila[9],
-            direccion2: fila[10],
-            cargo: fila[11],
-            antiguo: fila[12],
-            sueldo: fila[13],
-            email: fila[14],
-            fCobro: fila[15],
-            nNino: fila[16],
-            ciudad: fila[17],
-            cNomb: fila[18],
-            cApell: fila[19],
-            cEmpresa: fila[20],
-            cTele: fila[21],
-            cDir: fila[22],
-            cCargo: fila[23],
-            cAntig: fila[24],
-            cSueldo: fila[25],
-            rNomb1: fila[26],
-            rp1: fila[27],
-            rTele1: fila[28],
-            rTeleres1: fila[29],
-            rNomb2: fila[30],
-            rp2: fila[31],
-            rTele2: fila[32],
-            rTeleres2: fila[33],
-            rNomb3: fila[34],
-            rp3: fila[35],
-            rTele3: fila[36],
-            rTeleres3: fila[37],
-            rNomb4: fila[38],
-            rp4: fila[39],
-            rTele4: fila[40],
-            rTeleres4: fila[41],
-            oCuotas: fila[42],
-            oValor: fila[43],
-            cedula1: fila[44],
-            cc1: fila[45],
-            ce1: fila[46],
-            relacionista: fila[47],
-            colaborador: fila[48],
-            director: fila[49],
-            organizador: fila[50],
-            cedula2: fila[51],
-            cc2: fila[52],
-            ce2: fila[53],
-            cedula3: fila[54],
-            cedula4: fila[55],
-            detColec: fila[56],
-            detValor: fila[57],
-            totalVal: fila[58],
-            nCoutas: fila[59],
-            vrCuota: fila[60],
-            observ: fila[61]
-        };
-        pedidosSeb.push(nuevoPedidoSeb);
+        pedidosSeb = [];
+        const rangeSeb = sebastian.result;
+        rangeSeb.values.forEach((fila2) => {
+            //guardamos los datos de los pedidos en el sheet en un objeto
+            if (isNaN(parseInt(fila2[0]))) return;
+            const nuevoPedidoSeb = {
+                pedido: fila2[0],
+                fecha: fila2[1],
+                cuenta: fila2[2],
+                nombre1: fila2[3],
+                apellido: fila2[4],
+                direccion: fila2[5],
+                telefono: fila2[6],
+                barrio: fila2[7],
+                empresa: fila2[8],
+                telefono2: fila2[9],
+                direccion2: fila2[10],
+                cargo: fila2[11],
+                antiguo: fila2[12],
+                sueldo: fila2[13],
+                email: fila2[14],
+                fCobro: fila2[15],
+                nNino: fila2[16],
+                ciudad: fila2[17],
+                cNomb: fila2[18],
+                cApell: fila2[19],
+                cEmpresa: fila2[20],
+                cTele: fila2[21],
+                cDir: fila2[22],
+                cCargo: fila2[23],
+                cAntig: fila2[24],
+                cSueldo: fila2[25],
+                rNomb1: fila2[26],
+                rp1: fila2[27],
+                rTele1: fila2[28],
+                rTeleres1: fila2[29],
+                rNomb2: fila2[30],
+                rp2: fila2[31],
+                rTele2: fila2[32],
+                rTeleres2: fila2[33],
+                rNomb3: fila2[34],
+                rp3: fila2[35],
+                rTele3: fila2[36],
+                rTeleres3: fila2[37],
+                rNomb4: fila2[38],
+                rp4: fila2[39],
+                rTele4: fila2[40],
+                rTeleres4: fila2[41],
+                oCuotas: fila2[42],
+                oValor: fila2[43],
+                cedula1: fila[44],
+                cc1: fila[45],
+                ce1: fila[46],
+                relacionista: fila[47],
+                colaborador: fila[48],
+                director: fila[49],
+                organizador: fila[50],
+                cedula2: fila[51],
+                cc2: fila[52],
+                ce2: fila[53],
+                cedula3: fila2[54],
+                cedula4: fila2[55],
+                detColec: fila2[56],
+                detValor: fila2[57],
+                totalVal: fila2[58],
+                nCoutas: fila2[59],
+                vrCuota: fila2[60],
+                observ: fila2[61]
+            };
+            pedidosSeb.push(nuevoPedidoSeb)
+        });
+;
+        
         } catch (err) {
             console.error("Error al cargar los datos del formulario de Sebastian: " +err)
             return;
@@ -367,13 +372,13 @@ async function buscarPedido() {
 
     } else {
         //si no se encontro el numero de pedido, se le indica al usuario
-        console.log("La posición proporcionada está fuera de rango.");
+        console.log("No existe el pedido");
         alert("Numero de pedido no encontrado");
     }
 
     try{
-        const Encontrado = pedidosSeb.findIndex(pedidosSeb => parseInt(pedidosSeb.pedido) === parseInt($pedido.value));
-        if($pedido.value == undefined && $cedula1.value === "" && EncontradoSeb >= 0){
+        const Encontrado = pedidosSeb.findIndex(pedidosSeb => parseInt(pedidosSeb.cedula1) === parseInt($cedula1.value));
+        if($pedido.value === "" && $cedula1.value !== "" && Encontrado >= 0){
 
         //si encontramos el pedido, llevamos Encontrado datos al formulario
         const pedidoEncontrado = pedidos[Encontrado];
