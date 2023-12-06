@@ -378,10 +378,10 @@ async function buscarPedido() {
 
     try{
         const Encontrado = pedidosSeb.findIndex(pedidosSeb => parseInt(pedidosSeb.cedula1) === parseInt($cedula1.value));
-        if($pedido.value === "" && $cedula1.value !== "" && Encontrado >= 0){
+        if($pedido.value === "" && $cedula1.value !== "" && Encontrado > 0){
 
         //si encontramos el pedido, llevamos Encontrado datos al formulario
-        const pedidoEncontrado = pedidos[Encontrado];
+        const pedidoEncontrado = pedidosSeb[Encontrado];
 
         $pedido.value = parseInt(pedidoEncontrado.pedido);
         $fecha.value = pedidoEncontrado.fecha;
